@@ -1,0 +1,11 @@
+#!/bin/bash
+
+python3 gen_qualitative_field.py
+python3 gen_qualitative_forks_age.py
+python3 gen_qualitative_forks_goals.py
+python3 gen_qualitative_goal_field.py
+python3 gen_qualitative_languages.py
+python3 gen_qualitative_manipulation_field.py
+python3 gen_qualitative_msgtype_goal.py
+python3 gen_qualitative_robot_type_field.py
+python3 gen_qualitative_year_creation.py

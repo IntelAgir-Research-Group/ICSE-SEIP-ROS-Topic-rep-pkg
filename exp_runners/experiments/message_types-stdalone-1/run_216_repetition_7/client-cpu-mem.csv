@@ -1,0 +1,4 @@
+exec,label,timestamp,cpu,mem
+254,listener,1742888905,0.0,2308.0
+254,listener,1742888906,0.0,2308.0
+254,listener,1742888907,0.0,0.0

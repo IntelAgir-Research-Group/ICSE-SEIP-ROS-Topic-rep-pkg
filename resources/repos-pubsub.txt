@@ -1,0 +1,709 @@
+Results for https://github.com/noshluk2/ROS2-Self-Driving-Car-AI-using-OpenCV:
+  repos/ROS2-Self-Driving-Car-AI-using-OpenCV/self_driving_car_pkg/self_driving_car_pkg copy/sdc_V2.py:29 - self.subscriber = self.create_subscription(Image,'/camera/image_raw',self.process_data,10)
+  repos/ROS2-Self-Driving-Car-AI-using-OpenCV/self_driving_car_pkg/self_driving_car_pkg copy/sdc_V2.py:30 - self.publisher = self.create_publisher(Twist, '/cmd_vel', 40)
+  repos/ROS2-Self-Driving-Car-AI-using-OpenCV/self_driving_car_pkg/self_driving_car_pkg copy/sdc_V2.py:30 - self.publisher = self.create_publisher(Twist, '/cmd_vel', 40)
+  repos/ROS2-Self-Driving-Car-AI-using-OpenCV/self_driving_car_pkg/self_driving_car_pkg copy/sdc_V2.py:41 - self.satview_subscriber = self.create_subscription(Image,'/upper_camera/image_raw',self.process_sat_data,10)
+  repos/ROS2-Self-Driving-Car-AI-using-OpenCV/self_driving_car_pkg/self_driving_car_pkg copy/sdc_V2.py:42 - # Container to store frame retrived from overhead_view
+  repos/ROS2-Self-Driving-Car-AI-using-OpenCV/self_driving_car_pkg/self_driving_car_pkg copy/sdc_V2.py:46 - self.pose_subscriber = self.create_subscription(Odometry,'/odom',self.navigator.bot_motionplanner.get_pose,10)
+  repos/ROS2-Self-Driving-Car-AI-using-OpenCV/self_driving_car_pkg/self_driving_car_pkg copy/upper_camera_video.py:22 - self.subscriber = self.create_subscription(Image,'/upper_camera/image_raw',self.process_data,10)
+  repos/ROS2-Self-Driving-Car-AI-using-OpenCV/self_driving_car_pkg/self_driving_car_pkg copy/upper_camera_video.py:23 - ## setting for writing the frames into a video
+  repos/ROS2-Self-Driving-Car-AI-using-OpenCV/self_driving_car_pkg/self_driving_car_pkg/drive_node.py:13 - self.publisher_ = self.create_publisher(Twist, 'cmd_vel', 10)
+  repos/ROS2-Self-Driving-Car-AI-using-OpenCV/self_driving_car_pkg/self_driving_car_pkg/drive_node.py:14 - timer_period = 0.5
+  repos/ROS2-Self-Driving-Car-AI-using-OpenCV/self_driving_car_pkg/self_driving_car_pkg/sdc_V2.py:29 - self.subscriber = self.create_subscription(Image,'/camera/image_raw',self.process_data,10)
+  repos/ROS2-Self-Driving-Car-AI-using-OpenCV/self_driving_car_pkg/self_driving_car_pkg/sdc_V2.py:30 - self.publisher = self.create_publisher(Twist, '/cmd_vel', 40)
+  repos/ROS2-Self-Driving-Car-AI-using-OpenCV/self_driving_car_pkg/self_driving_car_pkg/sdc_V2.py:30 - self.publisher = self.create_publisher(Twist, '/cmd_vel', 40)
+  repos/ROS2-Self-Driving-Car-AI-using-OpenCV/self_driving_car_pkg/self_driving_car_pkg/sdc_V2.py:41 - self.satview_subscriber = self.create_subscription(Image,'/upper_camera/image_raw',self.process_sat_data,10)
+  repos/ROS2-Self-Driving-Car-AI-using-OpenCV/self_driving_car_pkg/self_driving_car_pkg/sdc_V2.py:42 - # Container to store frame retrived from overhead_view
+  repos/ROS2-Self-Driving-Car-AI-using-OpenCV/self_driving_car_pkg/self_driving_car_pkg/sdc_V2.py:46 - self.pose_subscriber = self.create_subscription(Odometry,'/odom',self.navigator.bot_motionplanner.get_pose,10)
+  repos/ROS2-Self-Driving-Car-AI-using-OpenCV/self_driving_car_pkg/self_driving_car_pkg/video_save.py:16 - self.subscriber = self.create_subscription(Image,'/camera/image_raw',self.process_data,10)
+  repos/ROS2-Self-Driving-Car-AI-using-OpenCV/self_driving_car_pkg/self_driving_car_pkg/video_save.py:17 - self.out = cv2.VideoWriter('/home/luqman/in_new.avi',cv2.VideoWriter_fourcc('M','J','P','G'),30,(1280,720))
+  repos/ROS2-Self-Driving-Car-AI-using-OpenCV/self_driving_car_pkg/self_driving_car_pkg/upper_camera_video.py:22 - self.subscriber = self.create_subscription(Image,'/upper_camera/image_raw',self.process_data,10)
+  repos/ROS2-Self-Driving-Car-AI-using-OpenCV/self_driving_car_pkg/self_driving_car_pkg/upper_camera_video.py:23 - ## setting for writing the frames into a video
+  repos/ROS2-Self-Driving-Car-AI-using-OpenCV/self_driving_car_pkg/self_driving_car_pkg/computer_vision_node.py:16 - self.subscriber = self.create_subscription(Image,'/camera/image_raw',self.process_data,10)
+  repos/ROS2-Self-Driving-Car-AI-using-OpenCV/self_driving_car_pkg/self_driving_car_pkg/computer_vision_node.py:17 - self.publisher = self.create_publisher(Twist, '/cmd_vel', 40)
+  repos/ROS2-Self-Driving-Car-AI-using-OpenCV/self_driving_car_pkg/self_driving_car_pkg/computer_vision_node.py:17 - self.publisher = self.create_publisher(Twist, '/cmd_vel', 40)
+  repos/ROS2-Self-Driving-Car-AI-using-OpenCV/self_driving_car_pkg/self_driving_car_pkg/computer_vision_node.py:18 - timer_period = 0.5;self.timer = self.create_timer(timer_period, self.send_cmd_vel)
+
+Results for https://github.com/Road-Balance/gcamp_ros2_basic:
+  repos/gcamp_ros2_basic/py_action_pkg/py_action_pkg/robot_controller.py:65 - self.laser_sub = self.create_subscription(
+  repos/gcamp_ros2_basic/py_action_pkg/py_action_pkg/robot_controller.py:66 - LaserScan, 'diffbot/scan', self.laser_sub_cb, self.sub_period
+  repos/gcamp_ros2_basic/py_action_pkg/py_action_pkg/robot_controller.py:70 - self.odom_sub = self.create_subscription(
+  repos/gcamp_ros2_basic/py_action_pkg/py_action_pkg/robot_controller.py:71 - Odometry,
+  repos/gcamp_ros2_basic/py_action_pkg/py_action_pkg/robot_controller.py:79 - self.cmd_vel_pub = self.create_publisher(
+  repos/gcamp_ros2_basic/py_action_pkg/py_action_pkg/robot_controller.py:80 - Twist, 'diffbot/cmd_vel', self.pub_period
+  repos/gcamp_ros2_basic/py_action_pkg/py_action_pkg/odom_sub.py:63 - self.subscription = self.create_subscription(
+  repos/gcamp_ros2_basic/py_action_pkg/py_action_pkg/odom_sub.py:64 - Odometry,
+  repos/gcamp_ros2_basic/py_action_pkg/py_action_pkg/image_sub.py:32 - self.subscription = self.create_subscription(
+  repos/gcamp_ros2_basic/py_action_pkg/py_action_pkg/image_sub.py:33 - Image,
+  repos/gcamp_ros2_basic/py_action_pkg/py_action_pkg/maze_action_server.py:60 - self.laser_sub = self.create_subscription(
+  repos/gcamp_ros2_basic/py_action_pkg/py_action_pkg/maze_action_server.py:61 - LaserScan, self.robot_namespace + 'scan', self.laser_sub_cb, 10
+  repos/gcamp_ros2_basic/py_action_pkg/py_action_pkg/maze_action_server.py:64 - self.odom_sub = self.create_subscription(
+  repos/gcamp_ros2_basic/py_action_pkg/py_action_pkg/maze_action_server.py:65 - Odometry, self.robot_namespace + 'odom', self.odom_sub_cb, 10
+  repos/gcamp_ros2_basic/py_action_pkg/py_action_pkg/maze_action_server.py:68 - self.cmd_vel_pub = self.create_publisher(Twist, self.robot_namespace + 'cmd_vel', 10)
+  repos/gcamp_ros2_basic/cpp_service_pkg/src/robot_turning_server.cpp:34 - m_twist_pub = create_publisher<Twist>("skidbot/cmd_vel", 10);
+  repos/gcamp_ros2_basic/cpp_service_pkg/src/robot_turning_server.cpp:35 - m_service = create_service<TurningControl>(
+  repos/gcamp_ros2_basic/py_topic_pkg/py_topic_pkg/laser_sub.py:27 - self.subscriber = self.create_subscription(
+  repos/gcamp_ros2_basic/py_topic_pkg/py_topic_pkg/laser_sub.py:28 - LaserScan, 'skidbot/scan', self.sub_callback, queue_size
+  repos/gcamp_ros2_basic/py_topic_pkg/py_topic_pkg/endless_cmd_vel_pub.py:29 - self.publisher = self.create_publisher(Twist, 'skidbot/cmd_vel', 10)
+  repos/gcamp_ros2_basic/py_topic_pkg/py_topic_pkg/endless_cmd_vel_pub.py:30 - timer_period = 0.5  # seconds
+  repos/gcamp_ros2_basic/py_topic_pkg/py_topic_pkg/parking.py:30 - self.publisher = self.create_publisher(Twist, 'skidbot/cmd_vel', 10)
+  repos/gcamp_ros2_basic/py_topic_pkg/py_topic_pkg/parking.py:32 - self.subscriber = self.create_subscription(
+  repos/gcamp_ros2_basic/py_topic_pkg/py_topic_pkg/parking.py:33 - LaserScan, 'skidbot/scan', self.sub_callback, 10
+  repos/gcamp_ros2_basic/py_topic_pkg/py_topic_pkg/laser_raw.py:27 - self.subscriber = self.create_subscription(
+  repos/gcamp_ros2_basic/py_topic_pkg/py_topic_pkg/laser_raw.py:28 - LaserScan, 'skidbot/scan', self.sub_callback, queue_size
+  repos/gcamp_ros2_basic/py_topic_pkg/py_topic_pkg/cmd_vel_pub.py:28 - self.publisher = self.create_publisher(
+  repos/gcamp_ros2_basic/py_topic_pkg/py_topic_pkg/cmd_vel_pub.py:29 - Twist, 'skidbot/cmd_vel', 10
+  repos/gcamp_ros2_basic/cpp_topic_pkg/src/cmd_vel_pub.cpp:32 - m_pub = create_publisher<geometry_msgs::msg::Twist>("skidbot/cmd_vel", 10);
+  repos/gcamp_ros2_basic/cpp_topic_pkg/src/cmd_vel_pub.cpp:33 - m_timer = create_wall_timer(std::chrono::milliseconds(100),
+  repos/gcamp_ros2_basic/cpp_topic_pkg/src/topic_pub_oop.cpp:36 - m_publisher = this->create_publisher<std_msgs::msg::Int32>("/counter", 10);
+  repos/gcamp_ros2_basic/cpp_topic_pkg/src/topic_pub_oop.cpp:37 - m_timer =
+  repos/gcamp_ros2_basic/cpp_topic_pkg/src/topic_pub.cpp:12 - auto publisher = node->create_publisher<std_msgs::msg::Int32>("counter", 10);
+  repos/gcamp_ros2_basic/cpp_topic_pkg/src/topic_pub.cpp:13 - auto msg = std::make_shared<std_msgs::msg::Int32>();
+  repos/gcamp_ros2_basic/cpp_topic_pkg/src/laser_sub.cpp:27 - m_sub = this->create_subscription<sensor_msgs::msg::LaserScan>(
+  repos/gcamp_ros2_basic/cpp_topic_pkg/src/laser_sub.cpp:28 - "skidbot/scan", 10,
+  repos/gcamp_ros2_basic/cpp_topic_pkg/src/parking.cpp:33 - m_pub = create_publisher<Twist>("skidbot/cmd_vel", 10);
+  repos/gcamp_ros2_basic/cpp_topic_pkg/src/parking.cpp:34 - m_sub = create_subscription<LaserScan>(
+  repos/gcamp_ros2_basic/cpp_topic_pkg/src/parking.cpp:34 - m_sub = create_subscription<LaserScan>(
+  repos/gcamp_ros2_basic/cpp_topic_pkg/src/parking.cpp:35 - "skidbot/scan", 10,
+  repos/gcamp_ros2_basic/cpp_topic_pkg/src/topic_sub.cpp:17 - auto subscriber = node->create_subscription<std_msgs::msg::Int32>(
+  repos/gcamp_ros2_basic/cpp_topic_pkg/src/topic_sub.cpp:18 - "counter", 10, sub_callback);
+  repos/gcamp_ros2_basic/cpp_topic_pkg/src/topic_sub_oop.cpp:13 - m_subscriber = this->create_subscription<std_msgs::msg::Int32>(
+  repos/gcamp_ros2_basic/cpp_topic_pkg/src/topic_sub_oop.cpp:14 - "/counter", 10,
+  repos/gcamp_ros2_basic/py_service_pkg/py_service_pkg/robot_turning_srv.py:34 - self.publisher = self.create_publisher(Twist, 'skidbot/cmd_vel', 10)
+  repos/gcamp_ros2_basic/py_service_pkg/py_service_pkg/robot_turning_srv.py:35 - self.srv = self.create_service(
+
+Results for https://github.com/TechmanRobotInc/tmr_ros2:
+  repos/tmr_ros2/demo/get_status_demo_src/demo_get_sct_response.cpp:13 - subscription_ = this->create_subscription<tm_msgs::msg::SctResponse>(
+  repos/tmr_ros2/demo/get_status_demo_src/demo_get_sct_response.cpp:14 - "sct_response", 10, std::bind(&MinimalSubscriber::topic_callback, this, _1));
+  repos/tmr_ros2/demo/get_status_demo_src/demo_get_svr_response.cpp:13 - subscription_ = this->create_subscription<tm_msgs::msg::SvrResponse>(
+  repos/tmr_ros2/demo/get_status_demo_src/demo_get_svr_response.cpp:14 - "svr_response", 10, std::bind(&MinimalSubscriber::topic_callback, this, _1));
+  repos/tmr_ros2/demo/get_status_demo_src/demo_get_torque_feedback.cpp:13 - subscription_ = this->create_subscription<tm_msgs::msg::FeedbackState>(
+  repos/tmr_ros2/demo/get_status_demo_src/demo_get_torque_feedback.cpp:14 - "feedback_states", 10, std::bind(&MinimalSubscriber::topic_callback, this, _1));
+  repos/tmr_ros2/demo/get_status_demo_src/demo_get_feedback.cpp:13 - subscription_ = this->create_subscription<tm_msgs::msg::FeedbackState>(
+  repos/tmr_ros2/demo/get_status_demo_src/demo_get_feedback.cpp:14 - "feedback_states", 10, std::bind(&MinimalSubscriber::topic_callback, this, _1));
+  repos/tmr_ros2/demo/get_status_demo_src/demo_get_sta_response.cpp:13 - subscription_ = this->create_subscription<tm_msgs::msg::StaResponse>(
+  repos/tmr_ros2/demo/get_status_demo_src/demo_get_sta_response.cpp:14 - "sta_response", 10, std::bind(&MinimalSubscriber::topic_callback, this, _1));
+  repos/tmr_ros2/techman_robot_get_status/tm_get_status/image_pub.py:22 - self.publisher = self.create_publisher(Image, 'techman_image', 10)
+  repos/tmr_ros2/techman_robot_get_status/tm_get_status/image_pub.py:23 - self.con = threading.Condition()
+  repos/tmr_ros2/tm_moveit_cpp_demo/src/run_moveit_cpp.cpp:60 - , robot_state_publisher_(node_->create_publisher<moveit_msgs::msg::DisplayRobotState>("display_robot_state", 1))
+  repos/tmr_ros2/tm_moveit_cpp_demo/src/run_moveit_cpp.cpp:61 - {
+  repos/tmr_ros2/tm_driver/src/tm_ros2_sct.cpp:22 - sm_.sct_pub = node->create_publisher<tm_msgs::msg::SctResponse>("sct_response", 1);
+  repos/tmr_ros2/tm_driver/src/tm_ros2_sct.cpp:23 - sm_.sta_pub = node->create_publisher<tm_msgs::msg::StaResponse>("sta_response", 1);
+  repos/tmr_ros2/tm_driver/src/tm_ros2_sct.cpp:23 - sm_.sta_pub = node->create_publisher<tm_msgs::msg::StaResponse>("sta_response", 1);
+  repos/tmr_ros2/tm_driver/src/tm_ros2_sct.cpp:24 - }
+  repos/tmr_ros2/tm_driver/src/tm_ros2_svr.cpp:20 - pm_.fbs_pub = node->create_publisher<tm_msgs::msg::FeedbackState>("feedback_states", 1);
+  repos/tmr_ros2/tm_driver/src/tm_ros2_svr.cpp:21 - pm_.joint_pub = node->create_publisher<sensor_msgs::msg::JointState>("joint_states", 1);
+  repos/tmr_ros2/tm_driver/src/tm_ros2_svr.cpp:21 - pm_.joint_pub = node->create_publisher<sensor_msgs::msg::JointState>("joint_states", 1);
+  repos/tmr_ros2/tm_driver/src/tm_ros2_svr.cpp:22 - pm_.tool_pose_pub = node->create_publisher<geometry_msgs::msg::PoseStamped>("tool_pose", 1);
+  repos/tmr_ros2/tm_driver/src/tm_ros2_svr.cpp:22 - pm_.tool_pose_pub = node->create_publisher<geometry_msgs::msg::PoseStamped>("tool_pose", 1);
+  repos/tmr_ros2/tm_driver/src/tm_ros2_svr.cpp:23 - if (!is_fake) {
+  repos/tmr_ros2/tm_driver/src/tm_ros2_svr.cpp:24 - pm_.svr_pub = node->create_publisher<tm_msgs::msg::SvrResponse>("svr_response", 1);
+  repos/tmr_ros2/tm_driver/src/tm_ros2_svr.cpp:25 - }
+  repos/tmr_ros2/tm_driver/src/tm_ros2_node.cpp:39 - pm_.joint_pub = this->create_publisher<sensor_msgs::msg::JointState>("joint_states", 10);
+  repos/tmr_ros2/ui_for_debug_and_demo/src/ros_page.cpp:47 - feedBackStatusSubscription = node->create_subscription<tm_msgs::msg::FeedbackState>(
+  repos/tmr_ros2/ui_for_debug_and_demo/src/ros_page.cpp:48 - "feedback_states", 10, std::bind(&RosPage::feedback_states_callback, this, std::placeholders::_1));
+  repos/tmr_ros2/ui_for_debug_and_demo/src/ros_page.cpp:49 - sctResponseSubscription = node->create_subscription<tm_msgs::msg::SctResponse>(
+  repos/tmr_ros2/ui_for_debug_and_demo/src/ros_page.cpp:50 - "sct_response", 10, std::bind(&RosPage::sct_response_callback, this, std::placeholders::_1));
+  repos/tmr_ros2/ui_for_debug_and_demo/src/ros_page.cpp:51 - staResponseSubscription = node->create_subscription<tm_msgs::msg::StaResponse>(
+  repos/tmr_ros2/ui_for_debug_and_demo/src/ros_page.cpp:52 - "sta_response", 10, std::bind(&RosPage::sta_response_callback, this, std::placeholders::_1));
+  repos/tmr_ros2/ui_for_debug_and_demo/src/ros_page.cpp:53 - svrResponseSubscription = node->create_subscription<tm_msgs::msg::SvrResponse>(
+  repos/tmr_ros2/ui_for_debug_and_demo/src/ros_page.cpp:54 - "svr_response", 10, std::bind(&RosPage::svr_response_callback, this, std::placeholders::_1));
+  repos/tmr_ros2/custom_package/src/sub_img.cpp:83 - imageSubscription = this->create_subscription<sensor_msgs::msg::Image>(
+  repos/tmr_ros2/custom_package/src/sub_img.cpp:84 - "techman_image", 10, std::bind(&SubImg::get_new_image_callback, this, std::placeholders::_1));
+
+Results for https://github.com/tesseract-robotics/tesseract_ros2:
+  repos/tesseract_ros2/tesseract_ros_examples/src/online_planning_example_node.cpp:107 - node->create_subscription<sensor_msgs::msg::JointState>(DYNAMIC_OBJECT_JOINT_STATE, rclcpp::QoS(20), fn2);
+  repos/tesseract_ros2/tesseract_rviz/src/environment_monitor_properties.cpp:356 - data_->snapshot = data_->node->create_subscription<tesseract_msgs::msg::Environment>(
+  repos/tesseract_ros2/tesseract_rviz/src/environment_monitor_properties.cpp:357 - data_->environment_snapshot_topic_property->getTopicStd(),
+  repos/tesseract_ros2/tesseract_rviz/src/joint_trajectory_monitor_properties.cpp:265 - data_->legacy_joint_trajectory_sub = data_->node->create_subscription<trajectory_msgs::msg::JointTrajectory>(
+  repos/tesseract_ros2/tesseract_rviz/src/joint_trajectory_monitor_properties.cpp:266 - data_->legacy_joint_trajectory_topic_property->getStdString(),
+  repos/tesseract_ros2/tesseract_rviz/src/joint_trajectory_monitor_properties.cpp:275 - data_->tesseract_joint_trajectory_sub = data_->node->create_subscription<tesseract_msgs::msg::Trajectory>(
+  repos/tesseract_ros2/tesseract_rviz/src/joint_trajectory_monitor_properties.cpp:276 - data_->tesseract_joint_trajectory_topic_property->getStdString(),
+  repos/tesseract_ros2/tesseract_rosutils/src/plotting.cpp:63 - trajectory_pub_ = internal_node_->create_publisher<tesseract_msgs::msg::Trajectory>(topic_namespace_ + "/display_"
+  repos/tesseract_ros2/tesseract_rosutils/src/plotting.cpp:64 - "tesseract_"
+  repos/tesseract_ros2/tesseract_rosutils/src/plotting.cpp:67 - collisions_pub_ = internal_node_->create_publisher<visualization_msgs::msg::MarkerArray>(topic_namespace_ + "/display"
+  repos/tesseract_ros2/tesseract_rosutils/src/plotting.cpp:68 - "_collisi"
+  repos/tesseract_ros2/tesseract_rosutils/src/plotting.cpp:71 - arrows_pub_ = internal_node_->create_publisher<visualization_msgs::msg::MarkerArray>(topic_namespace_ + "/display_"
+  repos/tesseract_ros2/tesseract_rosutils/src/plotting.cpp:72 - "arrows",
+  repos/tesseract_ros2/tesseract_rosutils/src/plotting.cpp:74 - axes_pub_ = internal_node_->create_publisher<visualization_msgs::msg::MarkerArray>(topic_namespace_ + "/display_axes",
+  repos/tesseract_ros2/tesseract_rosutils/src/plotting.cpp:75 - rclcpp::QoS(20));
+  repos/tesseract_ros2/tesseract_rosutils/src/plotting.cpp:76 - tool_path_pub_ = internal_node_->create_publisher<visualization_msgs::msg::MarkerArray>(topic_namespace_ + "/display_"
+  repos/tesseract_ros2/tesseract_rosutils/src/plotting.cpp:77 - "tool_"
+  repos/tesseract_ros2/tesseract_monitoring/src/current_state_monitor.cpp:122 - joint_state_subscriber_ = node_->create_subscription<sensor_msgs::msg::JointState>(
+  repos/tesseract_ros2/tesseract_monitoring/src/current_state_monitor.cpp:123 - joint_states_topic,
+  repos/tesseract_ros2/tesseract_monitoring/src/environment_monitor.cpp:318 - internal_node_->create_publisher<tesseract_msgs::msg::EnvironmentState>(environment_topic, rclcpp::QoS(100));
+  repos/tesseract_ros2/tesseract_monitoring/src/environment_monitor.cpp:319 - RCLCPP_INFO(logger_, "Publishing maintained environment on '%s'", environment_topic.c_str());
+  repos/tesseract_ros2/tesseract_monitoring/src/environment_monitor.cpp:416 - monitored_environment_subscriber_ = internal_node_->create_subscription<tesseract_msgs::msg::EnvironmentState>(
+  repos/tesseract_ros2/tesseract_monitoring/src/environment_monitor.cpp:417 - monitored_environment_topic,
+  repos/tesseract_ros2/tesseract_monitoring/src/contact_monitor.cpp:77 - joint_states_sub_ = internal_node_->create_subscription<sensor_msgs::msg::JointState>(
+  repos/tesseract_ros2/tesseract_monitoring/src/contact_monitor.cpp:78 - joint_state_topic,
+  repos/tesseract_ros2/tesseract_monitoring/src/contact_monitor.cpp:84 - contact_results_pub_ = internal_node_->create_publisher<tesseract_msgs::msg::ContactResultVector>(
+  repos/tesseract_ros2/tesseract_monitoring/src/contact_monitor.cpp:85 - contact_results_topic, rclcpp::QoS(100));
+  repos/tesseract_ros2/tesseract_monitoring/src/contact_monitor.cpp:114 - internal_node_->create_publisher<visualization_msgs::msg::MarkerArray>(contact_marker_topic, rclcpp::QoS(100));
+  repos/tesseract_ros2/tesseract_monitoring/src/contact_monitor.cpp:115 - }
+
+Results for https://github.com/suchetanrs/ORB-SLAM3-ROS2-Docker:
+  repos/ORB-SLAM3-ROS2-Docker/orb_slam3_ros2_wrapper/scripts/viz_keyframes.py:11 - self.publisher_ = self.create_publisher(PoseArray, '/pose_array_topic', 10)
+  repos/ORB-SLAM3-ROS2-Docker/orb_slam3_ros2_wrapper/scripts/viz_keyframes.py:12 - while not self.client.wait_for_service(timeout_sec=1.0):
+  repos/ORB-SLAM3-ROS2-Docker/orb_slam3_ros2_wrapper/scripts/get_landmarks_for_pose.py:14 - self.pose_subscription = self.create_subscription(
+  repos/ORB-SLAM3-ROS2-Docker/orb_slam3_ros2_wrapper/scripts/get_landmarks_for_pose.py:15 - PoseStamped,
+  repos/ORB-SLAM3-ROS2-Docker/orb_slam3_ros2_wrapper/src/rgbd/rgbd-slam-node.cpp:29 - imuSub_ = this->create_subscription<sensor_msgs::msg::Imu>(this->get_parameter("imu_topic_name").as_string(), 1000, std::bind(&RgbdSlamNode::ImuCallback, this, std::placeholders::_1));
+  repos/ORB-SLAM3-ROS2-Docker/orb_slam3_ros2_wrapper/src/rgbd/rgbd-slam-node.cpp:30 - odomSub_ = this->create_subscription<nav_msgs::msg::Odometry>(this->get_parameter("odom_topic_name").as_string(), 1000, std::bind(&RgbdSlamNode::OdomCallback, this, std::placeholders::_1));
+  repos/ORB-SLAM3-ROS2-Docker/orb_slam3_ros2_wrapper/src/rgbd/rgbd-slam-node.cpp:30 - odomSub_ = this->create_subscription<nav_msgs::msg::Odometry>(this->get_parameter("odom_topic_name").as_string(), 1000, std::bind(&RgbdSlamNode::OdomCallback, this, std::placeholders::_1));
+  repos/ORB-SLAM3-ROS2-Docker/orb_slam3_ros2_wrapper/src/rgbd/rgbd-slam-node.cpp:34 - mapPointsPub_ = this->create_publisher<sensor_msgs::msg::PointCloud2>("map_points", 10);
+  repos/ORB-SLAM3-ROS2-Docker/orb_slam3_ros2_wrapper/src/rgbd/rgbd-slam-node.cpp:35 - visibleLandmarksPub_ = this->create_publisher<sensor_msgs::msg::PointCloud2>("visible_landmarks", 10);
+  repos/ORB-SLAM3-ROS2-Docker/orb_slam3_ros2_wrapper/src/rgbd/rgbd-slam-node.cpp:35 - visibleLandmarksPub_ = this->create_publisher<sensor_msgs::msg::PointCloud2>("visible_landmarks", 10);
+  repos/ORB-SLAM3-ROS2-Docker/orb_slam3_ros2_wrapper/src/rgbd/rgbd-slam-node.cpp:36 - visibleLandmarksPose_ = this->create_publisher<geometry_msgs::msg::PoseStamped>("visible_landmarks_pose", 10);
+  repos/ORB-SLAM3-ROS2-Docker/orb_slam3_ros2_wrapper/src/rgbd/rgbd-slam-node.cpp:36 - visibleLandmarksPose_ = this->create_publisher<geometry_msgs::msg::PoseStamped>("visible_landmarks_pose", 10);
+  repos/ORB-SLAM3-ROS2-Docker/orb_slam3_ros2_wrapper/src/rgbd/rgbd-slam-node.cpp:37 - //---- the following is published continously
+  repos/ORB-SLAM3-ROS2-Docker/orb_slam3_ros2_wrapper/src/rgbd/rgbd-slam-node.cpp:38 - mapDataPub_ = this->create_publisher<slam_msgs::msg::MapData>("map_data", 10);
+  repos/ORB-SLAM3-ROS2-Docker/orb_slam3_ros2_wrapper/src/rgbd/rgbd-slam-node.cpp:39 - robotPoseMapFrame_ = this->create_publisher<geometry_msgs::msg::PoseStamped>("robot_pose_slam", 10);
+  repos/ORB-SLAM3-ROS2-Docker/orb_slam3_ros2_wrapper/src/rgbd/rgbd-slam-node.cpp:39 - robotPoseMapFrame_ = this->create_publisher<geometry_msgs::msg::PoseStamped>("robot_pose_slam", 10);
+  repos/ORB-SLAM3-ROS2-Docker/orb_slam3_map_generator/src/get_landmarks_simulator.cpp:35 - pointcloud_sub_ = this->create_subscription<sensor_msgs::msg::PointCloud2>(
+  repos/ORB-SLAM3-ROS2-Docker/orb_slam3_map_generator/src/get_landmarks_simulator.cpp:36 - "map_points",
+  repos/ORB-SLAM3-ROS2-Docker/orb_slam3_map_generator/src/get_landmarks_simulator.cpp:46 - landmarks_pub_ = this->create_publisher<sensor_msgs::msg::PointCloud2>(
+  repos/ORB-SLAM3-ROS2-Docker/orb_slam3_map_generator/src/get_landmarks_simulator.cpp:47 - "landmarks_in_view", 10);
+  repos/ORB-SLAM3-ROS2-Docker/orb_slam3_map_generator/src/get_landmarks_simulator.cpp:49 - trans_landmarks_pub_ = this->create_publisher<sensor_msgs::msg::PointCloud2>(
+  repos/ORB-SLAM3-ROS2-Docker/orb_slam3_map_generator/src/get_landmarks_simulator.cpp:50 - "transformed_map_points", 10);
+  repos/ORB-SLAM3-ROS2-Docker/orb_slam3_map_generator/src/stitch_pcl.cpp:36 - pc_sub_ = this->create_subscription<sensor_msgs::msg::PointCloud2>(
+  repos/ORB-SLAM3-ROS2-Docker/orb_slam3_map_generator/src/stitch_pcl.cpp:37 - "/camera/colored_pointcloud",
+  repos/ORB-SLAM3-ROS2-Docker/orb_slam3_map_generator/src/stitch_pcl.cpp:41 - map_graph_sub_ = this->create_subscription<slam_msgs::msg::MapData>(
+  repos/ORB-SLAM3-ROS2-Docker/orb_slam3_map_generator/src/stitch_pcl.cpp:42 - "/map_data",
+  repos/ORB-SLAM3-ROS2-Docker/orb_slam3_map_generator/src/stitch_pcl.cpp:47 - global_pc_pub_ = this->create_publisher<sensor_msgs::msg::PointCloud2>("global_pointcloud", 1);
+  repos/ORB-SLAM3-ROS2-Docker/orb_slam3_map_generator/src/color_pcl.cpp:29 - rgb_info_sub_ = this->create_subscription<sensor_msgs::msg::CameraInfo>(
+  repos/ORB-SLAM3-ROS2-Docker/orb_slam3_map_generator/src/color_pcl.cpp:30 - "/camera/color/camera_info", 10,
+  repos/ORB-SLAM3-ROS2-Docker/orb_slam3_map_generator/src/color_pcl.cpp:33 - depth_info_sub_ = this->create_subscription<sensor_msgs::msg::CameraInfo>(
+  repos/ORB-SLAM3-ROS2-Docker/orb_slam3_map_generator/src/color_pcl.cpp:34 - "/camera/depth/camera_info", 10,
+  repos/ORB-SLAM3-ROS2-Docker/orb_slam3_map_generator/src/color_pcl.cpp:53 - pointcloud_pub_ = this->create_publisher<sensor_msgs::msg::PointCloud2>(
+  repos/ORB-SLAM3-ROS2-Docker/orb_slam3_map_generator/src/color_pcl.cpp:54 - "/camera/colored_pointcloud", 10);
+
+Results for https://github.com/NVIDIA-AI-IOT/ros2_torch_trt:
+  repos/ros2_torch_trt/trt_live_classifier/trt_live_classifier/trt_classifier_helper.py:43 - self.image_subscriber = self.create_subscription(Image, 'image', self.listener_callback, 10)
+  repos/ros2_torch_trt/trt_live_classifier/trt_live_classifier/trt_classifier_helper.py:44 - self.image_subscriber
+  repos/ros2_torch_trt/trt_live_classifier/trt_live_classifier/trt_classifier_helper.py:47 - self.classification_publisher = self.create_publisher(Classification2D, 'trt_classification', 10)
+  repos/ros2_torch_trt/live_classifier/live_classifier/live_classifier_helper.py:42 - self.image_subscriber = self.create_subscription(Image, 'image', self.listener_callback, 10)
+  repos/ros2_torch_trt/live_classifier/live_classifier/live_classifier_helper.py:43 - self.image_subscriber
+  repos/ros2_torch_trt/live_classifier/live_classifier/live_classifier_helper.py:46 - self.classification_publisher = self.create_publisher(Classification2D, 'classification', 10)
+  repos/ros2_torch_trt/live_detection/live_detection/live_detection_helper.py:34 - self.subscription = self.create_subscription(Image, 'image', self.listener_callback, 10)
+  repos/ros2_torch_trt/live_detection/live_detection/live_detection_helper.py:35 - self.subscription  # prevent unused variable warning
+  repos/ros2_torch_trt/live_detection/live_detection/live_detection_helper.py:39 - self.detection_publisher = self.create_publisher(Detection2DArray, 'detection', 10)
+  repos/ros2_torch_trt/live_detection/live_detection/live_detection_helper.py:42 - self.result_publisher = self.create_publisher(Image,'detection_image',10)
+  repos/ros2_torch_trt/trt_live_detector/trt_live_detector/trt_detection_helper.py:37 - self.subscription = self.create_subscription(Image, 'image', self.listener_callback, 10)
+  repos/ros2_torch_trt/trt_live_detector/trt_live_detector/trt_detection_helper.py:38 - self.subscription  # prevent unused variable warning
+  repos/ros2_torch_trt/trt_live_detector/trt_live_detector/trt_detection_helper.py:42 - self.detection_publisher = self.create_publisher(Detection2DArray, 'trt_detection', 10)
+  repos/ros2_torch_trt/trt_live_detector/trt_live_detector/trt_detection_helper.py:45 - self.result_publisher = self.create_publisher(Image,'trt_detection_image',10)
+
+Results for https://github.com/westonrobot/scout_ros2:
+  repos/scout_ros2/scout_base/include/scout_base/scout_messenger.hpp:47 - node_->create_publisher<nav_msgs::msg::Odometry>(odom_topic_name_, 50);
+  repos/scout_ros2/scout_base/include/scout_base/scout_messenger.hpp:48 - status_pub_ = node_->create_publisher<scout_msgs::msg::ScoutStatus>(
+  repos/scout_ros2/scout_base/include/scout_base/scout_messenger.hpp:48 - status_pub_ = node_->create_publisher<scout_msgs::msg::ScoutStatus>(
+  repos/scout_ros2/scout_base/include/scout_base/scout_messenger.hpp:49 - "/scout_status", 10);
+  repos/scout_ros2/scout_base/include/scout_base/scout_messenger.hpp:52 - motion_cmd_sub_ = node_->create_subscription<geometry_msgs::msg::Twist>(
+  repos/scout_ros2/scout_base/include/scout_base/scout_messenger.hpp:53 - "/cmd_vel", 5,
+  repos/scout_ros2/scout_base/include/scout_base/scout_messenger.hpp:56 - light_cmd_sub_ = node_->create_subscription<scout_msgs::msg::ScoutLightCmd>(
+  repos/scout_ros2/scout_base/include/scout_base/scout_messenger.hpp:57 - "/light_control", 5,
+
+Results for https://github.com/stereolabs/zed-ros2-examples:
+  repos/zed-ros2-examples/tools/zed_benchmark_component/src/component/src/topic_benchmark_component.cpp:46 - mPub = create_publisher<
+  repos/zed-ros2-examples/tools/zed_benchmark_component/src/component/src/topic_benchmark_component.cpp:47 - zed_topic_benchmark_interfaces::msg::BenchmarkStatsStamped>(
+  repos/zed-ros2-examples/tutorials/zed_ipc/src/components/src/pointcloud_component.cpp:86 - auto sub = create_subscription<sensor_msgs::msg::PointCloud2>(
+  repos/zed-ros2-examples/tutorials/zed_ipc/src/components/src/pointcloud_component.cpp:87 - topic_name, _qos, bound_callback_func, _subOpt);
+  repos/zed-ros2-examples/tutorials/zed_pose_tutorial/src/zed_tutorial_pos_tracking.cpp:52 - mPoseSub = create_subscription<geometry_msgs::msg::PoseStamped>(
+  repos/zed-ros2-examples/tutorials/zed_pose_tutorial/src/zed_tutorial_pos_tracking.cpp:53 - "pose", qos,
+  repos/zed-ros2-examples/tutorials/zed_pose_tutorial/src/zed_tutorial_pos_tracking.cpp:57 - mOdomSub = create_subscription<nav_msgs::msg::Odometry>(
+  repos/zed-ros2-examples/tutorials/zed_pose_tutorial/src/zed_tutorial_pos_tracking.cpp:58 - "odom", qos,
+  repos/zed-ros2-examples/tutorials/zed_depth_tutorial/src/zed_depth_sub_tutorial.cpp:45 - mDepthSub = create_subscription<sensor_msgs::msg::Image>(
+  repos/zed-ros2-examples/tutorials/zed_depth_tutorial/src/zed_depth_sub_tutorial.cpp:46 - "depth", depth_qos,
+  repos/zed-ros2-examples/tutorials/zed_video_tutorial/src/zed_video_sub_tutorial.cpp:71 - auto right_sub = g_node->create_subscription<sensor_msgs::msg::Image>(
+  repos/zed-ros2-examples/tutorials/zed_video_tutorial/src/zed_video_sub_tutorial.cpp:72 - "right_image", video_qos, imageRightRectifiedCallback);
+  repos/zed-ros2-examples/tutorials/zed_video_tutorial/src/zed_video_sub_tutorial.cpp:75 - auto left_sub = g_node->create_subscription<sensor_msgs::msg::Image>(
+  repos/zed-ros2-examples/tutorials/zed_video_tutorial/src/zed_video_sub_tutorial.cpp:76 - "left_image", video_qos, imageLeftRectifiedCallback);
+
+  No matches found for https://github.com/url-kaist/patchwork-plusplus-ros
+Results for https://github.com/umdlife/psdk_ros2:
+  repos/psdk_ros2/psdk_wrapper/src/modules/perception.cpp:45 - create_publisher<sensor_msgs::msg::Image>(
+  repos/psdk_ros2/psdk_wrapper/src/modules/perception.cpp:46 - "psdk_ros2/perception_stereo_left_stream", rclcpp::SensorDataQoS());
+  repos/psdk_ros2/psdk_wrapper/src/modules/perception.cpp:48 - create_publisher<sensor_msgs::msg::Image>(
+  repos/psdk_ros2/psdk_wrapper/src/modules/perception.cpp:49 - "psdk_ros2/perception_stereo_right_stream", rclcpp::SensorDataQoS());
+  repos/psdk_ros2/psdk_wrapper/src/modules/perception.cpp:51 - create_publisher<psdk_interfaces::msg::PerceptionCameraParameters>(
+  repos/psdk_ros2/psdk_wrapper/src/modules/perception.cpp:52 - "psdk_ros2/perception_camera_parameters", 10);
+  repos/psdk_ros2/psdk_wrapper/src/modules/gimbal.cpp:44 - create_subscription<psdk_interfaces::msg::GimbalRotation>(
+  repos/psdk_ros2/psdk_wrapper/src/modules/gimbal.cpp:45 - "psdk_ros2/gimbal_rotation", 10,
+  repos/psdk_ros2/psdk_wrapper/src/modules/liveview.cpp:44 - main_camera_stream_pub_ = create_publisher<sensor_msgs::msg::Image>(
+  repos/psdk_ros2/psdk_wrapper/src/modules/liveview.cpp:45 - "psdk_ros2/main_camera_stream", rclcpp::SensorDataQoS());
+  repos/psdk_ros2/psdk_wrapper/src/modules/liveview.cpp:46 - fpv_camera_stream_pub_ = create_publisher<sensor_msgs::msg::Image>(
+  repos/psdk_ros2/psdk_wrapper/src/modules/liveview.cpp:47 - "psdk_ros2/fpv_camera_stream", rclcpp::SensorDataQoS());
+  repos/psdk_ros2/psdk_wrapper/src/modules/flight_control.cpp:47 - flight_control_generic_sub_ = create_subscription<sensor_msgs::msg::Joy>(
+  repos/psdk_ros2/psdk_wrapper/src/modules/flight_control.cpp:48 - "psdk_ros2/flight_control_setpoint_generic", 10,
+  repos/psdk_ros2/psdk_wrapper/src/modules/flight_control.cpp:51 - flight_control_position_yaw_sub_ = create_subscription<sensor_msgs::msg::Joy>(
+  repos/psdk_ros2/psdk_wrapper/src/modules/flight_control.cpp:52 - "psdk_ros2/flight_control_setpoint_ENUposition_yaw", 10,
+  repos/psdk_ros2/psdk_wrapper/src/modules/flight_control.cpp:56 - create_subscription<sensor_msgs::msg::Joy>(
+  repos/psdk_ros2/psdk_wrapper/src/modules/flight_control.cpp:57 - "psdk_ros2/flight_control_setpoint_ENUvelocity_yawrate", 10,
+  repos/psdk_ros2/psdk_wrapper/src/modules/flight_control.cpp:61 - create_subscription<sensor_msgs::msg::Joy>(
+  repos/psdk_ros2/psdk_wrapper/src/modules/flight_control.cpp:62 - "psdk_ros2/flight_control_setpoint_FLUvelocity_yawrate", 10,
+  repos/psdk_ros2/psdk_wrapper/src/modules/flight_control.cpp:67 - create_subscription<sensor_msgs::msg::Joy>(
+  repos/psdk_ros2/psdk_wrapper/src/modules/flight_control.cpp:68 - "psdk_ros2/flight_control_setpoint_rollpitch_yawrate_thrust", 10,
+  repos/psdk_ros2/psdk_wrapper/src/modules/telemetry.cpp:47 - attitude_pub_ = create_publisher<geometry_msgs::msg::QuaternionStamped>(
+  repos/psdk_ros2/psdk_wrapper/src/modules/telemetry.cpp:48 - "psdk_ros2/attitude", 10);
+  repos/psdk_ros2/psdk_wrapper/src/modules/telemetry.cpp:49 - imu_pub_ = create_publisher<sensor_msgs::msg::Imu>("psdk_ros2/imu", 10);
+  repos/psdk_ros2/psdk_wrapper/src/modules/telemetry.cpp:50 - velocity_ground_fused_pub_ =
+  repos/psdk_ros2/psdk_wrapper/src/modules/telemetry.cpp:51 - create_publisher<geometry_msgs::msg::Vector3Stamped>(
+  repos/psdk_ros2/psdk_wrapper/src/modules/telemetry.cpp:52 - "psdk_ros2/velocity_ground_fused", 10);
+  repos/psdk_ros2/psdk_wrapper/src/modules/telemetry.cpp:53 - position_fused_pub_ = create_publisher<psdk_interfaces::msg::PositionFused>(
+  repos/psdk_ros2/psdk_wrapper/src/modules/telemetry.cpp:54 - "psdk_ros2/position_fused", 10);
+  repos/psdk_ros2/psdk_wrapper/src/modules/telemetry.cpp:55 - gps_fused_pub_ = create_publisher<sensor_msgs::msg::NavSatFix>(
+  repos/psdk_ros2/psdk_wrapper/src/modules/telemetry.cpp:56 - "psdk_ros2/gps_position_fused", 10);
+  repos/psdk_ros2/psdk_wrapper/src/modules/telemetry.cpp:57 - gps_position_pub_ = create_publisher<sensor_msgs::msg::NavSatFix>(
+  repos/psdk_ros2/psdk_wrapper/src/modules/telemetry.cpp:58 - "psdk_ros2/gps_position", 10);
+  repos/psdk_ros2/psdk_wrapper/src/modules/telemetry.cpp:59 - gps_velocity_pub_ = create_publisher<geometry_msgs::msg::TwistStamped>(
+  repos/psdk_ros2/psdk_wrapper/src/modules/telemetry.cpp:60 - "psdk_ros2/gps_velocity", 10);
+  repos/psdk_ros2/psdk_wrapper/src/modules/telemetry.cpp:61 - gps_details_pub_ = create_publisher<psdk_interfaces::msg::GPSDetails>(
+  repos/psdk_ros2/psdk_wrapper/src/modules/telemetry.cpp:62 - "psdk_ros2/gps_details", 10);
+  repos/psdk_ros2/psdk_wrapper/src/modules/telemetry.cpp:64 - create_publisher<std_msgs::msg::UInt8>("psdk_ros2/gps_signal_level", 10);
+  repos/psdk_ros2/psdk_wrapper/src/modules/telemetry.cpp:65 - gps_control_pub_ =
+  repos/psdk_ros2/psdk_wrapper/src/modules/telemetry.cpp:66 - create_publisher<std_msgs::msg::UInt8>("psdk_ros2/gps_control_level", 10);
+  repos/psdk_ros2/psdk_wrapper/src/modules/telemetry.cpp:67 - rtk_position_pub_ = create_publisher<sensor_msgs::msg::NavSatFix>(
+  repos/psdk_ros2/psdk_wrapper/src/modules/telemetry.cpp:67 - rtk_position_pub_ = create_publisher<sensor_msgs::msg::NavSatFix>(
+  repos/psdk_ros2/psdk_wrapper/src/modules/telemetry.cpp:68 - "psdk_ros2/rtk_position", 10);
+  repos/psdk_ros2/psdk_wrapper/src/modules/telemetry.cpp:69 - rtk_velocity_pub_ = create_publisher<geometry_msgs::msg::TwistStamped>(
+  repos/psdk_ros2/psdk_wrapper/src/modules/telemetry.cpp:70 - "psdk_ros2/rtk_velocity", 10);
+  repos/psdk_ros2/psdk_wrapper/src/modules/telemetry.cpp:72 - create_publisher<psdk_interfaces::msg::RTKYaw>("psdk_ros2/rtk_yaw", 10);
+  repos/psdk_ros2/psdk_wrapper/src/modules/telemetry.cpp:73 - rtk_position_info_pub_ =
+  repos/psdk_ros2/psdk_wrapper/src/modules/telemetry.cpp:74 - create_publisher<std_msgs::msg::UInt8>("psdk_ros2/rtk_position_info", 10);
+  repos/psdk_ros2/psdk_wrapper/src/modules/telemetry.cpp:75 - rtk_yaw_info_pub_ =
+  repos/psdk_ros2/psdk_wrapper/src/modules/telemetry.cpp:76 - create_publisher<std_msgs::msg::UInt8>("psdk_ros2/rtk_yaw_info", 10);
+  repos/psdk_ros2/psdk_wrapper/src/modules/telemetry.cpp:77 - rtk_connection_status_pub_ = create_publisher<std_msgs::msg::UInt16>(
+  repos/psdk_ros2/psdk_wrapper/src/modules/telemetry.cpp:77 - rtk_connection_status_pub_ = create_publisher<std_msgs::msg::UInt16>(
+  repos/psdk_ros2/psdk_wrapper/src/modules/telemetry.cpp:78 - "psdk_ros2/rtk_connection_status", 10);
+  repos/psdk_ros2/psdk_wrapper/src/modules/telemetry.cpp:79 - magnetic_field_pub_ = create_publisher<sensor_msgs::msg::MagneticField>(
+  repos/psdk_ros2/psdk_wrapper/src/modules/telemetry.cpp:80 - "psdk_ros2/magnetic_field", 10);
+  repos/psdk_ros2/psdk_wrapper/src/modules/telemetry.cpp:81 - rc_pub_ = create_publisher<sensor_msgs::msg::Joy>("psdk_ros2/rc", 10);
+  repos/psdk_ros2/psdk_wrapper/src/modules/telemetry.cpp:82 - rc_connection_status_pub_ =
+  repos/psdk_ros2/psdk_wrapper/src/modules/telemetry.cpp:83 - create_publisher<psdk_interfaces::msg::RCConnectionStatus>(
+  repos/psdk_ros2/psdk_wrapper/src/modules/telemetry.cpp:84 - "psdk_ros2/rc_connection_status", 10);
+  repos/psdk_ros2/psdk_wrapper/src/modules/telemetry.cpp:86 - create_publisher<psdk_interfaces::msg::EscData>("psdk_ros2/esc_data", 1);
+  repos/psdk_ros2/psdk_wrapper/src/modules/telemetry.cpp:87 - gimbal_angles_pub_ = create_publisher<geometry_msgs::msg::Vector3Stamped>(
+  repos/psdk_ros2/psdk_wrapper/src/modules/telemetry.cpp:87 - gimbal_angles_pub_ = create_publisher<geometry_msgs::msg::Vector3Stamped>(
+  repos/psdk_ros2/psdk_wrapper/src/modules/telemetry.cpp:88 - "psdk_ros2/gimbal_angles", 10);
+  repos/psdk_ros2/psdk_wrapper/src/modules/telemetry.cpp:89 - gimbal_status_pub_ = create_publisher<psdk_interfaces::msg::GimbalStatus>(
+  repos/psdk_ros2/psdk_wrapper/src/modules/telemetry.cpp:90 - "psdk_ros2/gimbal_status", 10);
+  repos/psdk_ros2/psdk_wrapper/src/modules/telemetry.cpp:91 - flight_status_pub_ = create_publisher<psdk_interfaces::msg::FlightStatus>(
+  repos/psdk_ros2/psdk_wrapper/src/modules/telemetry.cpp:92 - "psdk_ros2/flight_status", 10);
+  repos/psdk_ros2/psdk_wrapper/src/modules/telemetry.cpp:93 - display_mode_pub_ = create_publisher<psdk_interfaces::msg::DisplayMode>(
+  repos/psdk_ros2/psdk_wrapper/src/modules/telemetry.cpp:94 - "psdk_ros2/display_mode", 10);
+  repos/psdk_ros2/psdk_wrapper/src/modules/telemetry.cpp:95 - landing_gear_pub_ = create_publisher<std_msgs::msg::UInt8>(
+  repos/psdk_ros2/psdk_wrapper/src/modules/telemetry.cpp:96 - "psdk_ros2/landing_gear_status", 10);
+  repos/psdk_ros2/psdk_wrapper/src/modules/telemetry.cpp:97 - motor_start_error_pub_ = create_publisher<std_msgs::msg::UInt16>(
+  repos/psdk_ros2/psdk_wrapper/src/modules/telemetry.cpp:98 - "psdk_ros2/motor_start_error", 10);
+  repos/psdk_ros2/psdk_wrapper/src/modules/telemetry.cpp:99 - flight_anomaly_pub_ = create_publisher<psdk_interfaces::msg::FlightAnomaly>(
+  repos/psdk_ros2/psdk_wrapper/src/modules/telemetry.cpp:100 - "psdk_ros2/flight_anomaly", 10);
+  repos/psdk_ros2/psdk_wrapper/src/modules/telemetry.cpp:102 - create_publisher<sensor_msgs::msg::BatteryState>("psdk_ros2/battery", 10);
+  repos/psdk_ros2/psdk_wrapper/src/modules/telemetry.cpp:103 - single_battery_index1_pub_ =
+  repos/psdk_ros2/psdk_wrapper/src/modules/telemetry.cpp:104 - create_publisher<psdk_interfaces::msg::SingleBatteryInfo>(
+  repos/psdk_ros2/psdk_wrapper/src/modules/telemetry.cpp:105 - "psdk_ros2/single_battery_index1", 10);
+  repos/psdk_ros2/psdk_wrapper/src/modules/telemetry.cpp:107 - create_publisher<psdk_interfaces::msg::SingleBatteryInfo>(
+  repos/psdk_ros2/psdk_wrapper/src/modules/telemetry.cpp:108 - "psdk_ros2/single_battery_index2", 10);
+  repos/psdk_ros2/psdk_wrapper/src/modules/telemetry.cpp:109 - height_fused_pub_ = create_publisher<std_msgs::msg::Float32>(
+  repos/psdk_ros2/psdk_wrapper/src/modules/telemetry.cpp:110 - "psdk_ros2/height_above_ground", 10);
+  repos/psdk_ros2/psdk_wrapper/src/modules/telemetry.cpp:112 - create_publisher<geometry_msgs::msg::Vector3Stamped>(
+  repos/psdk_ros2/psdk_wrapper/src/modules/telemetry.cpp:113 - "psdk_ros2/angular_rate_body_raw", 10);
+  repos/psdk_ros2/psdk_wrapper/src/modules/telemetry.cpp:115 - create_publisher<geometry_msgs::msg::Vector3Stamped>(
+  repos/psdk_ros2/psdk_wrapper/src/modules/telemetry.cpp:116 - "psdk_ros2/angular_rate_ground_fused", 10);
+  repos/psdk_ros2/psdk_wrapper/src/modules/telemetry.cpp:118 - create_publisher<geometry_msgs::msg::AccelStamped>(
+  repos/psdk_ros2/psdk_wrapper/src/modules/telemetry.cpp:119 - "psdk_ros2/acceleration_ground_fused", 10);
+  repos/psdk_ros2/psdk_wrapper/src/modules/telemetry.cpp:121 - create_publisher<geometry_msgs::msg::AccelStamped>(
+  repos/psdk_ros2/psdk_wrapper/src/modules/telemetry.cpp:122 - "psdk_ros2/acceleration_body_fused", 10);
+  repos/psdk_ros2/psdk_wrapper/src/modules/telemetry.cpp:124 - create_publisher<geometry_msgs::msg::AccelStamped>(
+  repos/psdk_ros2/psdk_wrapper/src/modules/telemetry.cpp:125 - "psdk_ros2/acceleration_body_raw", 10);
+  repos/psdk_ros2/psdk_wrapper/src/modules/telemetry.cpp:127 - create_publisher<psdk_interfaces::msg::RelativeObstacleInfo>(
+  repos/psdk_ros2/psdk_wrapper/src/modules/telemetry.cpp:128 - "psdk_ros2/relative_obstacle_info", 10);
+  repos/psdk_ros2/psdk_wrapper/src/modules/telemetry.cpp:129 - control_mode_pub_ = create_publisher<psdk_interfaces::msg::ControlMode>(
+  repos/psdk_ros2/psdk_wrapper/src/modules/telemetry.cpp:130 - "psdk_ros2/control_mode", 10);
+  repos/psdk_ros2/psdk_wrapper/src/modules/telemetry.cpp:132 - create_publisher<sensor_msgs::msg::NavSatFix>("psdk_ros2/home_point", 10);
+  repos/psdk_ros2/psdk_wrapper/src/modules/telemetry.cpp:133 - home_point_status_pub_ =
+  repos/psdk_ros2/psdk_wrapper/src/modules/telemetry.cpp:134 - create_publisher<std_msgs::msg::Bool>("psdk_ros2/home_point_status", 10);
+  repos/psdk_ros2/psdk_wrapper/src/modules/telemetry.cpp:135 - home_point_altitude_pub_ = create_publisher<std_msgs::msg::Float32>(
+  repos/psdk_ros2/psdk_wrapper/src/modules/telemetry.cpp:135 - home_point_altitude_pub_ = create_publisher<std_msgs::msg::Float32>(
+  repos/psdk_ros2/psdk_wrapper/src/modules/telemetry.cpp:136 - "psdk_ros2/home_point_altitude", 10);
+  repos/psdk_ros2/psdk_wrapper/src/modules/telemetry.cpp:137 - altitude_sl_pub_ = create_publisher<std_msgs::msg::Float32>(
+  repos/psdk_ros2/psdk_wrapper/src/modules/telemetry.cpp:138 - "psdk_ros2/altitude_sea_level", 10);
+  repos/psdk_ros2/psdk_wrapper/src/modules/telemetry.cpp:139 - altitude_barometric_pub_ = create_publisher<std_msgs::msg::Float32>(
+  repos/psdk_ros2/psdk_wrapper/src/modules/telemetry.cpp:140 - "psdk_ros2/altitude_barometric", 10);
+  repos/psdk_ros2/psdk_wrapper/src/modules/hms.cpp:41 - hms_info_table_pub_ = create_publisher<psdk_interfaces::msg::HmsInfoTable>(
+  repos/psdk_ros2/psdk_wrapper/src/modules/hms.cpp:42 - "psdk_ros2/hms_info_table", 10);
+
+Results for https://github.com/ROS2swarm/ROS2swarm:
+  repos/ROS2swarm/src/launch_gazebo/launch_gazebo/ground_truth_publisher.py:33 - self.pose_subscription = [self.create_subscription(
+  repos/ROS2swarm/src/launch_gazebo/launch_gazebo/ground_truth_publisher.py:34 - ModelStates,
+  repos/ROS2swarm/src/launch_gazebo/launch_gazebo/ground_truth_publisher.py:40 - self.data_publisher = self.create_publisher(
+  repos/ROS2swarm/src/launch_gazebo/launch_gazebo/ground_truth_publisher.py:41 - ModelStatesStamped,
+  repos/ROS2swarm/src/launch_gazebo/launch_gazebo/add_bot_node.py:75 - pub = node.create_publisher(PoseWithCovarianceStamped, topic, 10)
+  repos/ROS2swarm/src/ros2swarm/test/test_drive_pattern.py:91 - self.sub = self.testing_node.create_subscription(
+  repos/ROS2swarm/src/ros2swarm/test/test_drive_pattern.py:92 - Twist,
+  repos/ROS2swarm/src/ros2swarm/ros2swarm/abstract_pattern.py:29 - self.create_subscription(Int8Message, '/swarm_command',
+  repos/ROS2swarm/src/ros2swarm/ros2swarm/abstract_pattern.py:30 - self.swarm_command_callback, 10)
+  repos/ROS2swarm/src/ros2swarm/ros2swarm/hardware_protection_layer.py:50 - self.command_subscription = self.create_subscription(
+  repos/ROS2swarm/src/ros2swarm/ros2swarm/hardware_protection_layer.py:51 - Twist,
+  repos/ROS2swarm/src/ros2swarm/ros2swarm/hardware_protection_layer.py:59 - self.range_data_subscription = self.create_subscription(
+  repos/ROS2swarm/src/ros2swarm/ros2swarm/hardware_protection_layer.py:60 - RangeData,
+  repos/ROS2swarm/src/ros2swarm/ros2swarm/hardware_protection_layer.py:66 - self.publisher_cmd_vel = self.create_publisher(Twist,
+  repos/ROS2swarm/src/ros2swarm/ros2swarm/hardware_protection_layer.py:67 - self.get_namespace() + '/cmd_vel',
+  repos/ROS2swarm/src/ros2swarm/ros2swarm/voting_pattern/basic/voter_model_pattern.py:81 - self.broadcast_publisher = self.create_publisher(OpinionMessage,
+  repos/ROS2swarm/src/ros2swarm/ros2swarm/voting_pattern/basic/voter_model_pattern.py:82 - '/voting_broadcast',
+  repos/ROS2swarm/src/ros2swarm/ros2swarm/voting_pattern/basic/voter_model_pattern.py:85 - self.broadcast_subscription = self.create_subscription(
+  repos/ROS2swarm/src/ros2swarm/ros2swarm/voting_pattern/basic/voter_model_pattern.py:86 - OpinionMessage,
+  repos/ROS2swarm/src/ros2swarm/ros2swarm/voting_pattern/basic/majority_rule_pattern.py:85 - self.broadcast_publisher = self.create_publisher(OpinionMessage,
+  repos/ROS2swarm/src/ros2swarm/ros2swarm/voting_pattern/basic/majority_rule_pattern.py:86 - '/majority_broadcast',
+  repos/ROS2swarm/src/ros2swarm/ros2swarm/voting_pattern/basic/majority_rule_pattern.py:89 - self.opinion_publisher = self.create_publisher(OpinionMessage,
+  repos/ROS2swarm/src/ros2swarm/ros2swarm/voting_pattern/basic/majority_rule_pattern.py:90 - self.get_namespace() + '/opinion',
+  repos/ROS2swarm/src/ros2swarm/ros2swarm/voting_pattern/basic/majority_rule_pattern.py:93 - self.broadcast_subscription = self.create_subscription(
+  repos/ROS2swarm/src/ros2swarm/ros2swarm/voting_pattern/basic/majority_rule_pattern.py:94 - OpinionMessage,
+  repos/ROS2swarm/src/ros2swarm/ros2swarm/voting_pattern/basic/voter_model_with_limiter_pattern.py:98 - self.broadcast_publisher = self.create_publisher(OpinionMACMessage,
+  repos/ROS2swarm/src/ros2swarm/ros2swarm/voting_pattern/basic/voter_model_with_limiter_pattern.py:99 - '/voting_broadcast',
+  repos/ROS2swarm/src/ros2swarm/ros2swarm/voting_pattern/basic/voter_model_with_limiter_pattern.py:102 - self.broadcast_subscription = self.create_subscription(
+  repos/ROS2swarm/src/ros2swarm/ros2swarm/voting_pattern/basic/voter_model_with_limiter_pattern.py:103 - OpinionMACMessage,
+  repos/ROS2swarm/src/ros2swarm/ros2swarm/movement_pattern/movement_pattern.py:29 - self.command_publisher = self.create_publisher(Twist,
+  repos/ROS2swarm/src/ros2swarm/ros2swarm/movement_pattern/movement_pattern.py:30 - self.get_namespace() + '/drive_command', 10)
+  repos/ROS2swarm/src/ros2swarm/ros2swarm/movement_pattern/basic/rat_search_pattern.py:91 - self.scan_subscription = self.create_subscription(
+  repos/ROS2swarm/src/ros2swarm/ros2swarm/movement_pattern/basic/rat_search_pattern.py:92 - LaserScan,
+  repos/ROS2swarm/src/ros2swarm/ros2swarm/movement_pattern/basic/rat_search_pattern.py:98 - self.camera_subscription = self.create_subscription(
+  repos/ROS2swarm/src/ros2swarm/ros2swarm/movement_pattern/basic/rat_search_pattern.py:99 - Image,
+  repos/ROS2swarm/src/ros2swarm/ros2swarm/movement_pattern/basic/rat_search_pattern.py:105 - self.information_publisher = self.create_publisher(
+  repos/ROS2swarm/src/ros2swarm/ros2swarm/movement_pattern/basic/rat_search_pattern.py:106 - StringMessage,
+  repos/ROS2swarm/src/ros2swarm/ros2swarm/movement_pattern/basic/minimalist_flocking_pattern.py:80 - self.range_data_subscription = self.create_subscription(
+  repos/ROS2swarm/src/ros2swarm/ros2swarm/movement_pattern/basic/minimalist_flocking_pattern.py:81 - RangeData,
+  repos/ROS2swarm/src/ros2swarm/ros2swarm/movement_pattern/basic/attraction_pattern2.py:51 - self.scan_subscription = self.create_subscription(
+  repos/ROS2swarm/src/ros2swarm/ros2swarm/movement_pattern/basic/attraction_pattern2.py:52 - RangeData,
+  repos/ROS2swarm/src/ros2swarm/ros2swarm/movement_pattern/basic/magnetometer_pattern.py:52 - self.magnetometer_subscription = self.create_subscription(
+  repos/ROS2swarm/src/ros2swarm/ros2swarm/movement_pattern/basic/magnetometer_pattern.py:53 - MagneticField,
+  repos/ROS2swarm/src/ros2swarm/ros2swarm/movement_pattern/basic/magnetometer_pattern.py:59 - self.test_output = self.create_publisher(Twist, self.get_namespace() + '/test_output', 10)
+  repos/ROS2swarm/src/ros2swarm/ros2swarm/movement_pattern/basic/aggregation_pattern.py:63 - self.range_data_subscription = self.create_subscription(
+  repos/ROS2swarm/src/ros2swarm/ros2swarm/movement_pattern/basic/aggregation_pattern.py:64 - RangeData,
+  repos/ROS2swarm/src/ros2swarm/ros2swarm/movement_pattern/basic/attraction_pattern.py:49 - self.scan_subscription = self.create_subscription(
+  repos/ROS2swarm/src/ros2swarm/ros2swarm/movement_pattern/basic/attraction_pattern.py:50 - RangeData,
+  repos/ROS2swarm/src/ros2swarm/ros2swarm/movement_pattern/basic/dispersion_pattern.py:51 - self.range_data_subscription = self.create_subscription(
+  repos/ROS2swarm/src/ros2swarm/ros2swarm/movement_pattern/basic/dispersion_pattern.py:52 - RangeData,
+  repos/ROS2swarm/src/ros2swarm/ros2swarm/movement_pattern/basic/dispersion_pattern.py:58 - self.max_range_subscription = self.create_subscription(
+  repos/ROS2swarm/src/ros2swarm/ros2swarm/movement_pattern/basic/dispersion_pattern.py:59 - DoubleMessage,
+  repos/ROS2swarm/src/ros2swarm/ros2swarm/movement_pattern/combined/discussed_dispersion_pattern.py:47 - self.dispersion_subpattern = self.create_subscription(
+  repos/ROS2swarm/src/ros2swarm/ros2swarm/movement_pattern/combined/discussed_dispersion_pattern.py:48 - Twist,
+  repos/ROS2swarm/src/ros2swarm/ros2swarm/movement_pattern/combined/discussed_dispersion_pattern.py:53 - self.majority_rule_subpattern = self.create_subscription(
+  repos/ROS2swarm/src/ros2swarm/ros2swarm/movement_pattern/combined/discussed_dispersion_pattern.py:54 - OpinionMessage,
+  repos/ROS2swarm/src/ros2swarm/ros2swarm/movement_pattern/combined/discussed_dispersion_pattern.py:59 - self.dispersion_distance_publisher = self.create_publisher(DoubleMessage,
+  repos/ROS2swarm/src/ros2swarm/ros2swarm/movement_pattern/combined/discussed_dispersion_pattern.py:60 - self.get_namespace() + '/dispersion_distance', 10)
+  repos/ROS2swarm/src/ros2swarm/ros2swarm/sensor_layer/ir_layer.py:69 - self.range_subscriptions = [self.create_subscription(
+  repos/ROS2swarm/src/ros2swarm/ros2swarm/sensor_layer/ir_layer.py:70 - Range,
+  repos/ROS2swarm/src/ros2swarm/ros2swarm/sensor_layer/ir_layer.py:77 - self.range_data_publisher = self.create_publisher(
+  repos/ROS2swarm/src/ros2swarm/ros2swarm/sensor_layer/ir_layer.py:78 - RangeData,
+  repos/ROS2swarm/src/ros2swarm/ros2swarm/sensor_layer/lidar_layer.py:71 - self.scan_subscription = self.create_subscription(
+  repos/ROS2swarm/src/ros2swarm/ros2swarm/sensor_layer/lidar_layer.py:72 - LaserScan,
+  repos/ROS2swarm/src/ros2swarm/ros2swarm/sensor_layer/lidar_layer.py:78 - self.range_data_publisher = self.create_publisher(
+  repos/ROS2swarm/src/ros2swarm/ros2swarm/sensor_layer/lidar_layer.py:79 - RangeData,
+  repos/ROS2swarm/src/ros2swarm/ros2swarm/sensor_layer/ir_tf_layer.py:76 - self.range_subs = [self.create_subscription(
+  repos/ROS2swarm/src/ros2swarm/ros2swarm/sensor_layer/ir_tf_layer.py:77 - Range,
+  repos/ROS2swarm/src/ros2swarm/ros2swarm/sensor_layer/ir_tf_layer.py:84 - self.range_data_publisher = self.create_publisher(
+  repos/ROS2swarm/src/ros2swarm/ros2swarm/sensor_layer/ir_tf_layer.py:85 - RangeData,
+
+  No matches found for https://github.com/agilexrobotics/scout_ros
+Results for https://github.com/fmrico/ros_to_ros2_talk_examples:
+  repos/ros_to_ros2_talk_examples/intro_ros2/src/composable_node_pub_timer.cpp:29 - pub_ = create_publisher<std_msgs::msg::String>("chatter", 10);
+  repos/ros_to_ros2_talk_examples/intro_ros2/src/composable_node_pub_timer.cpp:30 - timer_ = create_wall_timer(
+  repos/ros_to_ros2_talk_examples/intro_ros2/src/composable_node_pub.cpp:27 - pub_ = create_publisher<std_msgs::msg::String>("chatter", 10);
+  repos/ros_to_ros2_talk_examples/intro_ros2/src/composable_node_pub.cpp:28 - }
+  repos/ros_to_ros2_talk_examples/intro_ros2/src/simple_node_pub_qos.cpp:24 - auto publisher = node->create_publisher<std_msgs::msg::String>(
+  repos/ros_to_ros2_talk_examples/intro_ros2/src/simple_node_pub_qos.cpp:25 - "chatter", rclcpp::QoS(100).transient_local());
+  repos/ros_to_ros2_talk_examples/intro_ros2/src/simple_node_sub.cpp:30 - auto subscription = node->create_subscription<std_msgs::msg::String>(
+  repos/ros_to_ros2_talk_examples/intro_ros2/src/simple_node_sub.cpp:31 - "chatter", 10, callback);
+  repos/ros_to_ros2_talk_examples/intro_ros2/src/simple_node_pub.cpp:25 - auto publisher = node->create_publisher<std_msgs::msg::String>(
+  repos/ros_to_ros2_talk_examples/intro_ros2/src/simple_node_pub.cpp:26 - "chatter", 10);
+  repos/ros_to_ros2_talk_examples/intro_ros2/src/composable_node_sub.cpp:26 - sub_ = create_subscription<std_msgs::msg::String>(
+  repos/ros_to_ros2_talk_examples/intro_ros2/src/composable_node_sub.cpp:27 - "chatter", 10, std::bind(&MyNodeSubscriber::callback, this, _1));
+  repos/ros_to_ros2_talk_examples/intro_ros2/src/composable_node_pub_sub.cpp:28 - pub_ = create_publisher<std_msgs::msg::String>("chatter", 10);
+  repos/ros_to_ros2_talk_examples/intro_ros2/src/composable_node_pub_sub.cpp:29 - timer_ = create_wall_timer(
+  repos/ros_to_ros2_talk_examples/intro_ros2/src/composable_node_pub_sub.cpp:53 - auto subscription = node->create_subscription<std_msgs::msg::String>(
+  repos/ros_to_ros2_talk_examples/intro_ros2/src/composable_node_pub_sub.cpp:54 - "chatter", 10, [&counter, &node](std_msgs::msg::String::UniquePtr msg) {
+  repos/ros_to_ros2_talk_examples/intro_ros2/src/simple_node_sub_qos.cpp:30 - auto subscription = node->create_subscription<std_msgs::msg::String>(
+  repos/ros_to_ros2_talk_examples/intro_ros2/src/simple_node_sub_qos.cpp:31 - "chatter", rclcpp::QoS(100).transient_local(), callback);
+  repos/ros_to_ros2_talk_examples/intro_py_ros2/intro_py_ros2/simple_node_pub.py:24 - publisher = node.create_publisher(String, 'chatter', 10)
+  repos/ros_to_ros2_talk_examples/intro_py_ros2/intro_py_ros2/simple_node_sub_qos.py:33 - subscription = node.create_subscription(String, 'chatter', callback, QoSDurabilityPolicy.TRANSIENT_LOCAL)
+  repos/ros_to_ros2_talk_examples/intro_py_ros2/intro_py_ros2/simple_node_sub_qos.py:34 - subscription
+  repos/ros_to_ros2_talk_examples/intro_py_ros2/intro_py_ros2/composable_node_pub.py:24 - self.pub_ = self.create_publisher(String, 'chatter', 10)
+  repos/ros_to_ros2_talk_examples/intro_py_ros2/intro_py_ros2/composable_node_pub.py:25 - self.counter = 0
+  repos/ros_to_ros2_talk_examples/intro_py_ros2/intro_py_ros2/simple_node_pub_qos.py:25 - publisher = node.create_publisher(String, 'chatter', QoSDurabilityPolicy.TRANSIENT_LOCAL)
+  repos/ros_to_ros2_talk_examples/intro_py_ros2/intro_py_ros2/composable_node_pub_timer.py:25 - self.pub_ = self.create_publisher(String, 'chatter', 10)
+  repos/ros_to_ros2_talk_examples/intro_py_ros2/intro_py_ros2/composable_node_pub_timer.py:26 - self.timer_ = self.create_timer(rate, self.timer_callback)
+  repos/ros_to_ros2_talk_examples/intro_py_ros2/intro_py_ros2/composable_node_sub.py:25 - self.sub_ = self.create_subscription(String, 'chatter', self.callback, 10)
+  repos/ros_to_ros2_talk_examples/intro_py_ros2/intro_py_ros2/composable_node_sub.py:26 - self.sub_
+  repos/ros_to_ros2_talk_examples/intro_py_ros2/intro_py_ros2/simple_node_sub.py:32 - subscription = node.create_subscription(String, 'chatter', callback, 10)
+  repos/ros_to_ros2_talk_examples/intro_py_ros2/intro_py_ros2/simple_node_sub.py:33 - subscription
+  repos/ros_to_ros2_talk_examples/example_test/test/example_subscriber_test.cpp:53 - auto test_pub = test_node->create_publisher<std_msgs::msg::String>("chatter", 10);
+  repos/ros_to_ros2_talk_examples/example_test/src/example_test/ExampleSubscriber.cpp:34 - subscriber_ = create_subscription<std_msgs::msg::String>("chatter", 10,
+  repos/ros_to_ros2_talk_examples/example_test/src/example_test/ExampleSubscriber.cpp:35 - std::bind(&ExampleSubscriber::message_callback, this, _1));
+  repos/ros_to_ros2_talk_examples/lifecycle_nodes_ros2/src/pub_lifecycle_node.cpp:33 - pub_ = create_publisher<std_msgs::msg::Float64>("configured_speed", 100);
+  repos/ros_to_ros2_talk_examples/lifecycle_nodes_ros2/src/pub_lifecycle_node.cpp:34 - }
+
+Results for https://github.com/duyongquan/OpenRobotics:
+  repos/OpenRobotics/ros2_simulations/velodyne_simulator/velodyne_gazebo_plugins/src/GazeboRosVelodyneLaser.cpp:117 - pub_ = ros_node_->create_publisher<sensor_msgs::msg::PointCloud2>("~/out", 10);
+  repos/OpenRobotics/ros2_navigation/nav2_demos/src/tutorials_nav2_utils_planner_test.cpp:48 - path_publisher_ = this->create_publisher<ComputePathToPoseResult>("plan", 10);
+  repos/OpenRobotics/ros2_navigation/nav2_demos/src/tutorials_nav2_utils_planner_test.cpp:69 - map_pub_ = this->create_publisher<nav_msgs::msg::OccupancyGrid>("map",
+  repos/OpenRobotics/ros2_navigation/nav2_demos/src/tutorials_nav2_utils_planner_test.cpp:70 - rclcpp::QoS(rclcpp::KeepLast(1)).transient_local().reliable());
+  repos/OpenRobotics/ros2_navigation/nav2_demos/src/tutorials_nav2_controller_node_main.cpp:36 - global_path_sub_ = this->create_subscription<nav_msgs::msg::Path>(
+  repos/OpenRobotics/ros2_navigation/nav2_demos/src/tutorials_nav2_controller_node_main.cpp:37 - "plan", rclcpp::SystemDefaultsQoS(),
+  repos/OpenRobotics/ros2_navigation/nav2_demos/src/tutorials_nav2_utils_poses_publisher.cpp:11 - point_cloud_publisher_ = node->create_publisher<sensor_msgs::msg::PointCloud>("nav2_point_cloud", 10);
+  repos/OpenRobotics/ros2_navigation/nav2_demos/src/tutorials_nav2_utils_poses_publisher.cpp:12 - poses_publisher_ = node->create_publisher<geometry_msgs::msg::PoseStamped>("nav2_points", 10);
+  repos/OpenRobotics/ros2_navigation/nav2_demos/src/tutorials_nav2_utils_poses_publisher.cpp:12 - poses_publisher_ = node->create_publisher<geometry_msgs::msg::PoseStamped>("nav2_points", 10);
+  repos/OpenRobotics/ros2_navigation/nav2_demos/src/tutorials_nav2_utils_poses_publisher.cpp:13 - path_publisher_ = node->create_publisher<nav_msgs::msg::Path>("nav2_path", 10);
+  repos/OpenRobotics/ros2_navigation/nav2_demos/src/tutorials_nav2_utils_poses_publisher.cpp:13 - path_publisher_ = node->create_publisher<nav_msgs::msg::Path>("nav2_path", 10);
+  repos/OpenRobotics/ros2_navigation/nav2_demos/src/tutorials_nav2_utils_poses_publisher.cpp:14 - reference_points_publisher_ = node->create_publisher<geometry_msgs::msg::PoseArray>("reference_points", 10);
+  repos/OpenRobotics/ros2_navigation/nav2_demos/src/tutorials_nav2_utils_poses_publisher.cpp:14 - reference_points_publisher_ = node->create_publisher<geometry_msgs::msg::PoseArray>("reference_points", 10);
+  repos/OpenRobotics/ros2_navigation/nav2_demos/src/tutorials_nav2_utils_poses_publisher.cpp:17 - start_sub_ = node->create_subscription<geometry_msgs::msg::PoseWithCovarianceStamped>(
+  repos/OpenRobotics/ros2_navigation/nav2_demos/src/tutorials_nav2_utils_poses_publisher.cpp:18 - "initialpose", map_qos,
+  repos/OpenRobotics/ros2_navigation/nav2_demos/src/tutorials_nav2_utils_poses_publisher.cpp:21 - goal_sub_ = node->create_subscription<geometry_msgs::msg::PointStamped>(
+  repos/OpenRobotics/ros2_navigation/nav2_demos/src/tutorials_nav2_utils_poses_publisher.cpp:22 - "clicked_point", map_qos,
+  repos/OpenRobotics/ros2_navigation/nav2_demos/src/tutorials_nav2_demo6_navfn_planner_test.cpp:42 - start_sub_ = create_subscription<geometry_msgs::msg::PoseWithCovarianceStamped>(
+  repos/OpenRobotics/ros2_navigation/nav2_demos/src/tutorials_nav2_demo6_navfn_planner_test.cpp:43 - "initialpose", map_qos,
+  repos/OpenRobotics/ros2_navigation/nav2_demos/src/tutorials_nav2_demo6_navfn_planner_test.cpp:46 - goal_sub_ = create_subscription<geometry_msgs::msg::PoseStamped>(
+  repos/OpenRobotics/ros2_navigation/nav2_demos/src/tutorials_nav2_demo6_navfn_planner_test.cpp:47 - "goal_pose", map_qos,
+  repos/OpenRobotics/ros2_navigation/nav2_demos/src/tutorials_nav2_utils_opencv_to_costmap.cpp:25 - costmap_pub_ = node->create_publisher<nav_msgs::msg::OccupancyGrid>(
+  repos/OpenRobotics/ros2_navigation/nav2_demos/src/tutorials_nav2_utils_opencv_to_costmap.cpp:26 - map_topic,
+  repos/OpenRobotics/ros2_navigation/map_generator/src/map_generator_node.cpp:89 - pcl_pub_ = this->create_publisher<sensor_msgs::msg::PointCloud2>("mock_map", rclcpp::SystemDefaultsQoS());
+  repos/OpenRobotics/ros2_navigation/map_generator/src/map_generator_node.cpp:90 - task_trhead_ = std::make_shared<std::thread>(&MapGenerator::RunTask, this);
+  repos/OpenRobotics/ros2_navigation/map_generator/src/random_forest_sensing.cpp:9 - local_map_pub_ = this->create_publisher<sensor_msgs::msg::PointCloud2>(
+  repos/OpenRobotics/ros2_navigation/map_generator/src/random_forest_sensing.cpp:10 - "/map_generator/local_cloud", rclcpp::SystemDefaultsQoS());
+  repos/OpenRobotics/ros2_navigation/map_generator/src/random_forest_sensing.cpp:11 - all_map_pub_ = this->create_publisher<sensor_msgs::msg::PointCloud2>(
+  repos/OpenRobotics/ros2_navigation/map_generator/src/random_forest_sensing.cpp:12 - "/map_generator/global_cloud", rclcpp::SystemDefaultsQoS());
+  repos/OpenRobotics/ros2_navigation/map_generator/src/random_forest_sensing.cpp:13 - click_map_pub_ = this->create_publisher<sensor_msgs::msg::PointCloud2>(
+  repos/OpenRobotics/ros2_navigation/map_generator/src/random_forest_sensing.cpp:14 - "/pcl_render_node/local_map", rclcpp::SystemDefaultsQoS());
+  repos/OpenRobotics/ros2_navigation/map_generator/src/random_forest_sensing.cpp:15 - odom_sub_ = this->create_subscription<nav_msgs::msg::Odometry>(
+  repos/OpenRobotics/ros2_navigation/map_generator/src/random_forest_sensing.cpp:16 - "odometry", 10,
+  repos/OpenRobotics/ros2_navigation/visualization_tools/src/planning_visualization.cpp:12 - traj_pub_ = node_->create_publisher<visualization_msgs::msg::Marker>("/planning_vis/trajectory", 20);
+  repos/OpenRobotics/ros2_navigation/visualization_tools/src/planning_visualization.cpp:13 - pubs_.push_back(traj_pub_);
+  repos/OpenRobotics/ros2_navigation/visualization_tools/src/planning_visualization.cpp:15 - topo_pub_ = node_->create_publisher<visualization_msgs::msg::Marker>("/planning_vis/topo_path", 20);
+  repos/OpenRobotics/ros2_navigation/visualization_tools/src/planning_visualization.cpp:16 - pubs_.push_back(topo_pub_);
+  repos/OpenRobotics/ros2_navigation/visualization_tools/src/planning_visualization.cpp:18 - predict_pub_ = node_->create_publisher<visualization_msgs::msg::Marker>("/planning_vis/prediction", 20);
+  repos/OpenRobotics/ros2_navigation/visualization_tools/src/planning_visualization.cpp:19 - pubs_.push_back(predict_pub_);
+  repos/OpenRobotics/ros2_navigation/visualization_tools/src/planning_visualization.cpp:21 - visib_pub_ = node_->create_publisher<visualization_msgs::msg::Marker>("/planning_vis/visib_constraint", 20);
+  repos/OpenRobotics/ros2_navigation/visualization_tools/src/planning_visualization.cpp:22 - pubs_.push_back(visib_pub_);
+  repos/OpenRobotics/ros2_navigation/visualization_tools/src/planning_visualization.cpp:24 - frontier_pub_ = node_->create_publisher<visualization_msgs::msg::Marker>("/planning_vis/frontier", 20);
+  repos/OpenRobotics/ros2_navigation/visualization_tools/src/planning_visualization.cpp:25 - pubs_.push_back(frontier_pub_);
+  repos/OpenRobotics/ros2_navigation/visualization_tools/src/planning_visualization.cpp:27 - yaw_pub_ = node_->create_publisher<visualization_msgs::msg::Marker>("/planning_vis/yaw", 20);
+  repos/OpenRobotics/ros2_navigation/visualization_tools/src/planning_visualization.cpp:28 - pubs_.push_back(yaw_pub_);
+  repos/OpenRobotics/ros2_navigation/visualization_tools/src/ros_visualization_tools.cpp:14 - rviz_pub = nh->create_publisher<visualization_msgs::msg::MarkerArray>(topic, 1);
+  repos/OpenRobotics/ros2_navigation/visualization_tools/src/ros_visualization_tools.cpp:15 - }
+  repos/OpenRobotics/ros2_navigation/trajectory/test/test_traj_generator.cpp:23 - traj_pub = this->create_publisher<visualization_msgs::msg::Marker>("/traj_generator/traj_vis", 10);
+  repos/OpenRobotics/ros2_navigation/behavior_tree/test/plugins/decorator/test_speed_controller.cpp:59 - auto odom_pub = node_->create_publisher<nav_msgs::msg::Odometry>("odom", 1);
+  repos/OpenRobotics/ros2_navigation/behavior_tree/test/plugins/decorator/test_speed_controller.cpp:60 - nav_msgs::msg::Odometry odom_msg;
+  repos/OpenRobotics/ros2_navigation/behavior_tree/test/plugins/condition/test_is_battery_low.cpp:31 - battery_pub_ = node_->create_publisher<sensor_msgs::msg::BatteryState>(
+  repos/OpenRobotics/ros2_navigation/behavior_tree/test/plugins/condition/test_is_battery_low.cpp:32 - "/battery_status",
+  repos/OpenRobotics/ros2_navigation/behavior_tree/test/plugins/condition/test_is_stuck.cpp:38 - auto odom_pub = node_->create_publisher<nav_msgs::msg::Odometry>("odom", 1);
+  repos/OpenRobotics/ros2_navigation/behavior_tree/test/plugins/condition/test_is_stuck.cpp:39 - nav_msgs::msg::Odometry odom_msg;
+  repos/OpenRobotics/ros2_navigation/behavior_tree/plugins/condition/is_battery_low_condition.cpp:29 - battery_sub_ = node_->create_subscription<sensor_msgs::msg::BatteryState>(
+  repos/OpenRobotics/ros2_navigation/behavior_tree/plugins/condition/is_battery_low_condition.cpp:30 - battery_topic_,
+  repos/OpenRobotics/ros2_navigation/behavior_tree/plugins/condition/is_stuck_condition.cpp:31 - odom_sub_ = node_->create_subscription<nav_msgs::msg::Odometry>(
+  repos/OpenRobotics/ros2_navigation/behavior_tree/plugins/condition/is_stuck_condition.cpp:32 - "odom",
+  repos/OpenRobotics/ros2_navigation/voronoi_layer/src/voronoi_layer.cpp:71 - voronoi_grid_pub_ = node->create_publisher<nav_msgs::msg::OccupancyGrid>(
+  repos/OpenRobotics/ros2_navigation/voronoi_layer/src/voronoi_layer.cpp:72 - "voronoi_grid", rclcpp::SystemDefaultsQoS());
+  repos/OpenRobotics/ros2_basics/timer/src/tutorials_timer_demo2_start_stop_test.cpp:37 - pos_pub_ = create_publisher<geometry_msgs::msg::PoseStamped>(
+  repos/OpenRobotics/ros2_basics/timer/src/tutorials_timer_demo2_start_stop_test.cpp:38 - global_pose_topic_, rclcpp::SystemDefaultsQoS());
+  repos/OpenRobotics/ros2_basics/timer/src/tutorials_timer_demo2_start_stop_test.cpp:41 - subscription_  = this->create_subscription<std_msgs::msg::Int32>(
+  repos/OpenRobotics/ros2_basics/timer/src/tutorials_timer_demo2_start_stop_test.cpp:42 - "pose_cmd", 10, std::bind(&PosePublisher::HandleCommandCallback, this, std::placeholders::_1));
+  repos/OpenRobotics/ros2_basics/topic/README.md:144 - publisher_ = this->create_publisher<std_msgs::msg::String>("topic", 10);
+  repos/OpenRobotics/ros2_basics/topic/README.md:145 - timer_ = this->create_wall_timer(
+  repos/OpenRobotics/ros2_basics/topic/README.md:237 - publisher_ = this->create_publisher<std_msgs::msg::String>("topic", 10);
+  repos/OpenRobotics/ros2_basics/topic/README.md:238 - auto timer_callback = [this]() -> void {
+  repos/OpenRobotics/ros2_basics/topic/README.md:322 - auto publisher = node->create_publisher<std_msgs::msg::String>("topic", 10);
+  repos/OpenRobotics/ros2_basics/topic/README.md:323 - std_msgs::msg::String message;
+  repos/OpenRobotics/ros2_basics/topic/README.md:425 - subscription_ = this->create_subscription<std_msgs::msg::String>(
+  repos/OpenRobotics/ros2_basics/topic/README.md:426 - "topic", 10, std::bind(&MinimalSubscriber::HandleTopicCallback, this, std::placeholders::_1));
+  repos/OpenRobotics/ros2_basics/topic/README.md:542 - publisher_ = this->create_publisher<std_msgs::msg::String>("topic", 10);
+  repos/OpenRobotics/ros2_basics/topic/README.md:543 - auto timer_callback = [this]() -> void {
+  repos/OpenRobotics/ros2_basics/topic/README.md:556 - subscription_ = this->create_subscription<std_msgs::msg::String>("topic", 10,
+  repos/OpenRobotics/ros2_basics/topic/README.md:557 - [this](std_msgs::msg::String::UniquePtr msg) {
+  repos/OpenRobotics/ros2_basics/topic/README.md:662 - subscription_ = this->create_subscription<std_msgs::msg::String>(
+  repos/OpenRobotics/ros2_basics/topic/README.md:663 - "topic", 10, callback, options);
+  repos/OpenRobotics/ros2_basics/topic/README.md:782 - publisher_1_ = this->create_publisher<std_msgs::msg::String>("topic_1", 10, options_1);
+  repos/OpenRobotics/ros2_basics/topic/README.md:783 - timer_1_ = this->create_wall_timer(
+  repos/OpenRobotics/ros2_basics/topic/README.md:789 - publisher_2_ = this->create_publisher<std_msgs::msg::String>("topic_2", 10);
+  repos/OpenRobotics/ros2_basics/topic/README.md:790 - timer_2_ = this->create_wall_timer(
+  repos/OpenRobotics/ros2_basics/topic/README.md:857 - subscription_1_ = this->create_subscription<std_msgs::msg::String>(
+  repos/OpenRobotics/ros2_basics/topic/README.md:858 - "topic_1", 10, std::bind(
+  repos/OpenRobotics/ros2_basics/topic/README.md:865 - subscription_2_ = this->create_subscription<std_msgs::msg::String>(
+  repos/OpenRobotics/ros2_basics/topic/README.md:866 - "topic_2", 10, std::bind(
+  repos/OpenRobotics/ros2_basics/topic/src/tutorials_topic_demo3_lambda.cpp:13 - publisher_ = this->create_publisher<std_msgs::msg::String>("topic", 10);
+  repos/OpenRobotics/ros2_basics/topic/src/tutorials_topic_demo3_lambda.cpp:14 - auto timer_callback = [this]() -> void {
+  repos/OpenRobotics/ros2_basics/topic/src/tutorials_topic_demo3_lambda.cpp:27 - subscription_ = this->create_subscription<std_msgs::msg::String>("topic", 10,
+  repos/OpenRobotics/ros2_basics/topic/src/tutorials_topic_demo3_lambda.cpp:28 - [this](std_msgs::msg::String::UniquePtr msg) {
+  repos/OpenRobotics/ros2_basics/topic/src/tutorials_topic_demo5_member_function_with_topic_statistics.cpp:27 - subscription_ = this->create_subscription<std_msgs::msg::String>(
+  repos/OpenRobotics/ros2_basics/topic/src/tutorials_topic_demo5_member_function_with_topic_statistics.cpp:28 - "topic", 10, callback, options);
+  repos/OpenRobotics/ros2_basics/topic/src/tutorials_topic_demo2_member_function.cpp:13 - publisher_ = this->create_publisher<std_msgs::msg::String>("topic", 10);
+  repos/OpenRobotics/ros2_basics/topic/src/tutorials_topic_demo2_member_function.cpp:14 - timer_ = this->create_wall_timer(
+  repos/OpenRobotics/ros2_basics/topic/src/tutorials_topic_demo2_member_function.cpp:34 - subscription_ = this->create_subscription<std_msgs::msg::String>(
+  repos/OpenRobotics/ros2_basics/topic/src/tutorials_topic_demo2_member_function.cpp:35 - "topic", 10, std::bind(&MinimalSubscriber::HandleTopicCallback, this, std::placeholders::_1));
+  repos/OpenRobotics/ros2_basics/topic/src/tutorials_topic_demo4_not_composable_test.cpp:18 - auto publisher = node->create_publisher<std_msgs::msg::String>("topic", 10);
+  repos/OpenRobotics/ros2_basics/topic/src/tutorials_topic_demo4_not_composable_test.cpp:19 - std_msgs::msg::String message;
+  repos/OpenRobotics/ros2_basics/topic/src/tutorials_topic_demo6_member_function_with_unique_network_flow_endpoints.cpp:19 - publisher_1_ = this->create_publisher<std_msgs::msg::String>("topic_1", 10, options_1);
+  repos/OpenRobotics/ros2_basics/topic/src/tutorials_topic_demo6_member_function_with_unique_network_flow_endpoints.cpp:20 - timer_1_ = this->create_wall_timer(
+  repos/OpenRobotics/ros2_basics/topic/src/tutorials_topic_demo6_member_function_with_unique_network_flow_endpoints.cpp:26 - publisher_2_ = this->create_publisher<std_msgs::msg::String>("topic_2", 10);
+  repos/OpenRobotics/ros2_basics/topic/src/tutorials_topic_demo6_member_function_with_unique_network_flow_endpoints.cpp:27 - timer_2_ = this->create_wall_timer(
+  repos/OpenRobotics/ros2_basics/topic/src/tutorials_topic_demo6_member_function_with_unique_network_flow_endpoints.cpp:94 - subscription_1_ = this->create_subscription<std_msgs::msg::String>(
+  repos/OpenRobotics/ros2_basics/topic/src/tutorials_topic_demo6_member_function_with_unique_network_flow_endpoints.cpp:95 - "topic_1", 10, std::bind(
+  repos/OpenRobotics/ros2_basics/topic/src/tutorials_topic_demo6_member_function_with_unique_network_flow_endpoints.cpp:102 - subscription_2_ = this->create_subscription<std_msgs::msg::String>(
+  repos/OpenRobotics/ros2_basics/topic/src/tutorials_topic_demo6_member_function_with_unique_network_flow_endpoints.cpp:103 - "topic_2", 10, std::bind(
+  repos/OpenRobotics/ros2_basics/pointcloud_subsriber/pointcloud_subsriber/pointcloud_subsriber.py:28 - self.pcd_subscriber = self.create_subscription(
+  repos/OpenRobotics/ros2_basics/pointcloud_subsriber/pointcloud_subsriber/pointcloud_subsriber.py:29 - PointCloud2,    # Msg type
+  repos/OpenRobotics/ros2_basics/system_monitor/system_monitor/cpu_monitor.py:97 - self._diag_pub = self.create_publisher(DiagnosticArray, '/diagnostics', 100)
+  repos/OpenRobotics/ros2_basics/system_monitor/system_monitor/cpu_monitor.py:98 - self._mutex = threading.Lock()
+  repos/OpenRobotics/ros2_basics/rviz/README.md:159 - path_publisher_ = this->create_publisher<nav_msgs::msg::Path>("circle_trajectory", 10);
+  repos/OpenRobotics/ros2_basics/rviz/README.md:160 - timer_ = this->create_wall_timer(1s, std::bind(&ShowCircleTrajectory::HandleTimerCallback, this));
+  repos/OpenRobotics/ros2_basics/rviz/src/tutorials_rviz_marker_basic_shapes_test.cpp:20 - marker_publisher_ = this->create_publisher<visualization_msgs::msg::Marker>(
+  repos/OpenRobotics/ros2_basics/rviz/src/tutorials_rviz_marker_basic_shapes_test.cpp:21 - "visualization_marker", 1);
+  repos/OpenRobotics/ros2_basics/rviz/src/tutorials_rviz_marker_points_and_lines_test.cpp:19 - marker_publisher_ = this->create_publisher<visualization_msgs::msg::Marker>(
+  repos/OpenRobotics/ros2_basics/rviz/src/tutorials_rviz_marker_points_and_lines_test.cpp:20 - "visualization_marker", 1);
+  repos/OpenRobotics/ros2_basics/rviz/src/tutorials_rviz_demo3_interactive_markers_test.cpp:103 - pos_pub_ = create_publisher<geometry_msgs::msg::PoseStamped>(
+  repos/OpenRobotics/ros2_basics/rviz/src/tutorials_rviz_demo3_interactive_markers_test.cpp:104 - "target_point", rclcpp::SystemDefaultsQoS());
+  repos/OpenRobotics/ros2_basics/rviz/src/tutorials_rviz_demo3_interactive_markers_test.cpp:106 - path_publisher_ = create_publisher<nav_msgs::msg::Path>(
+  repos/OpenRobotics/ros2_basics/rviz/src/tutorials_rviz_demo3_interactive_markers_test.cpp:107 - "global_path", rclcpp::SystemDefaultsQoS());
+  repos/OpenRobotics/ros2_basics/rviz/src/tutorials_rviz_demo3_interactive_markers_test.cpp:109 - marker_publisher_ = this->create_publisher<visualization_msgs::msg::Marker>(
+  repos/OpenRobotics/ros2_basics/rviz/src/tutorials_rviz_demo3_interactive_markers_test.cpp:110 - "pose", 1);
+  repos/OpenRobotics/ros2_basics/rviz/src/tutorials_rviz_demo3_interactive_markers_test.cpp:113 - cmd_path_type_sub_ = this->create_subscription<std_msgs::msg::Int32>(
+  repos/OpenRobotics/ros2_basics/rviz/src/tutorials_rviz_demo3_interactive_markers_test.cpp:114 - "path_type", 10, std::bind(&EightPathGenerator::HandlePathTypeCallback, this, std::placeholders::_1));
+  repos/OpenRobotics/ros2_basics/rviz/src/tutorials_rviz_demo4_markers_array_lines_test.cpp:20 - marker_publisher_ = this->create_publisher<visualization_msgs::msg::MarkerArray>(
+  repos/OpenRobotics/ros2_basics/rviz/src/tutorials_rviz_demo4_markers_array_lines_test.cpp:21 - "visualization_marker", 1);
+  repos/OpenRobotics/ros2_basics/rviz/src/tutorials_rviz_demo2_eight_shape_path_test.cpp:109 - pos_pub_ = create_publisher<geometry_msgs::msg::PoseStamped>(
+  repos/OpenRobotics/ros2_basics/rviz/src/tutorials_rviz_demo2_eight_shape_path_test.cpp:110 - "target_point", rclcpp::SystemDefaultsQoS());
+  repos/OpenRobotics/ros2_basics/rviz/src/tutorials_rviz_demo2_eight_shape_path_test.cpp:112 - path_publisher_ = create_publisher<nav_msgs::msg::Path>(
+  repos/OpenRobotics/ros2_basics/rviz/src/tutorials_rviz_demo2_eight_shape_path_test.cpp:113 - "global_path", rclcpp::SystemDefaultsQoS());
+  repos/OpenRobotics/ros2_basics/rviz/src/tutorials_rviz_demo2_eight_shape_path_test.cpp:115 - marker_publisher_ = this->create_publisher<visualization_msgs::msg::Marker>(
+  repos/OpenRobotics/ros2_basics/rviz/src/tutorials_rviz_demo2_eight_shape_path_test.cpp:116 - "pose", 1);
+  repos/OpenRobotics/ros2_basics/rviz/src/tutorials_rviz_demo2_eight_shape_path_test.cpp:119 - cmd_path_type_sub_ = this->create_subscription<std_msgs::msg::Int32>(
+  repos/OpenRobotics/ros2_basics/rviz/src/tutorials_rviz_demo2_eight_shape_path_test.cpp:120 - "path_type", 10, std::bind(&EightPathGenerator::HandlePathTypeCallback, this, std::placeholders::_1));
+  repos/OpenRobotics/ros2_basics/rviz/src/tutorials_rviz_demo1_initial_env.cpp:25 - path_publisher_ = this->create_publisher<nav_msgs::msg::Path>("circle_trajectory", 10);
+  repos/OpenRobotics/ros2_basics/rviz/src/tutorials_rviz_demo1_initial_env.cpp:26 - timer_ = this->create_wall_timer(1s, std::bind(&ShowCircleTrajectory::HandleTimerCallback, this));
+  repos/OpenRobotics/docs/source/_source/basics/ROS2-Publisher-Subscriber.md:45 - self.publisher_ = self.create_publisher(String, 'topic', 10)
+  repos/OpenRobotics/docs/source/_source/basics/ROS2-Publisher-Subscriber.md:46 - timer_period = 0.5  # seconds
+  repos/OpenRobotics/docs/source/_source/basics/ROS2-Publisher-Subscriber.md:94 - self.publisher_ = self.create_publisher(String, 'topic', 10)
+  repos/OpenRobotics/docs/source/_source/basics/ROS2-Publisher-Subscriber.md:95 - timer_period = 0.5  # seconds
+  repos/OpenRobotics/docs/source/_source/basics/ROS2-Publisher-Subscriber.md:100 - As explained above, we create a subclass of type `MinimalPublisher` using the base class `Node`.In the constructor `__init__()`, we pass the name of the node that we ish to assign to the constructer of the parent class using `super()`. The parent class `Node` takes care of actually assigning this string as a name.`self.publisher_ = self.create_publisher(String, 'topic', 10)` This line actually creates a publisher, using the message type `String` that we imported, with the name `topic` that we choose and having a queue size of `10`. Queue size is the size of the output buffer. The commands used till now are typical when creating a subscriber. What follows next is only logic that is relevant to this node, and you may implement this in any way depending on your requirements.
+  repos/OpenRobotics/ros2_quadruped/quad_global_planner/src/rviz_interface.cpp:30 - body_plan_sub_ = this->create_subscription<quad_msgs::msg::BodyPlan>(
+  repos/OpenRobotics/ros2_quadruped/quad_global_planner/src/rviz_interface.cpp:31 - body_plan_topic_, 10,
+  repos/OpenRobotics/ros2_quadruped/quad_global_planner/src/rviz_interface.cpp:33 - discrete_body_plan_sub_ = this->create_subscription<quad_msgs::msg::BodyPlan>(
+  repos/OpenRobotics/ros2_quadruped/quad_global_planner/src/rviz_interface.cpp:34 - discrete_body_plan_topic_, 10,
+  repos/OpenRobotics/ros2_quadruped/quad_global_planner/src/rviz_interface.cpp:37 - body_plan_viz_pub_ = this->create_publisher<nav_msgs::msg::Path>(
+  repos/OpenRobotics/ros2_quadruped/quad_global_planner/src/rviz_interface.cpp:38 - body_plan_viz_topic_, rclcpp::SystemDefaultsQoS());
+  repos/OpenRobotics/ros2_quadruped/quad_global_planner/src/rviz_interface.cpp:40 - discrete_body_plan_viz_pub_ = this->create_publisher<visualization_msgs::msg::Marker>(
+  repos/OpenRobotics/ros2_quadruped/quad_global_planner/src/rviz_interface.cpp:41 - discrete_body_plan_viz_topic_, rclcpp::SystemDefaultsQoS());
+  repos/OpenRobotics/ros2_quadruped/quad_global_planner/src/global_body_planner.cpp:34 - body_plan_pub_ = this->create_publisher<quad_msgs::msg::BodyPlan>(
+  repos/OpenRobotics/ros2_quadruped/quad_global_planner/src/global_body_planner.cpp:35 - body_plan_topic_, rclcpp::SystemDefaultsQoS());
+  repos/OpenRobotics/ros2_quadruped/quad_global_planner/src/global_body_planner.cpp:37 - discrete_body_plan_pub_ = this->create_publisher<quad_msgs::msg::BodyPlan>(
+  repos/OpenRobotics/ros2_quadruped/quad_global_planner/src/global_body_planner.cpp:38 - discrete_body_plan_topic_, rclcpp::SystemDefaultsQoS());
+  repos/OpenRobotics/ros2_quadruped/quad_global_planner/src/global_body_planner.cpp:40 - terrain_map_sub_ = this->create_subscription<grid_map_msgs::msg::GridMap>(
+  repos/OpenRobotics/ros2_quadruped/quad_global_planner/src/global_body_planner.cpp:41 - terrain_map_topic_, 10,
+  repos/OpenRobotics/ros2_quadruped/quad_global_planner/src/terrain_map_publisher.cpp:23 - terrain_map_pub_ = this->create_publisher<grid_map_msgs::msg::GridMap>(
+  repos/OpenRobotics/ros2_quadruped/quad_global_planner/src/terrain_map_publisher.cpp:24 - terrain_map_topic_, rclcpp::SystemDefaultsQoS());
+  repos/OpenRobotics/ros2_quadruped/quad_global_planner/src/terrain_map_publisher.cpp:28 - image_sub_ = this->create_subscription<sensor_msgs::msg::Image>(
+  repos/OpenRobotics/ros2_quadruped/quad_global_planner/src/terrain_map_publisher.cpp:29 - image_topic_, 10,
+  repos/OpenRobotics/ros2_quadruped/quad_utils/src/mesh_to_grid_map_converter.cpp:36 - mesh_sub_ = node_->create_subscription<pcl_msgs::msg::PolygonMesh>(
+  repos/OpenRobotics/ros2_quadruped/quad_utils/src/mesh_to_grid_map_converter.cpp:37 - "mesh", 10, std::bind(&MeshToGridMapConverter::meshCallback, this, std::placeholders::_1));
+  repos/OpenRobotics/ros2_quadruped/quad_utils/src/mesh_to_grid_map_converter.cpp:42 - grid_map_pub_ = node_->create_publisher<grid_map_msgs::msg::GridMap>("terrain_map_raw", 1);
+  repos/OpenRobotics/ros2_quadruped/quad_utils/src/mesh_to_grid_map_converter.cpp:43 - }
+  repos/OpenRobotics/ros2_quadruped/quad_utils/src/terrain_map_publisher.cpp:50 - terrain_map_pub_ = create_publisher<grid_map_msgs::msg::GridMap>(terrain_map_topic, 1);
+  repos/OpenRobotics/ros2_quadruped/quad_utils/src/terrain_map_publisher.cpp:62 - image_sub_ = create_subscription<sensor_msgs::msg::Image>(
+  repos/OpenRobotics/ros2_quadruped/quad_utils/src/terrain_map_publisher.cpp:63 - image_topic, 1, std::bind(&TerrainMapPublisher::loadMapFromImage, this, std::placeholders::_1));
+  repos/OpenRobotics/ros2_quadruped/quad_simulator/quad_gazebo/src/contact_plugin.cpp:62 - impl_->pub_ = impl_->ros_node_->create_publisher<quad_msgs::msg::ContactMode>(
+  repos/OpenRobotics/ros2_quadruped/quad_simulator/quad_gazebo/src/contact_plugin.cpp:63 - "gazebo/toe_forces", qos.get_publisher_qos("gazebo/toe_forces", rclcpp::SensorDataQoS().reliable()));
+  repos/OpenRobotics/ros2_controller/lqr_controller/src/lqr_controller_ros.cpp:45 - global_path_pub_ = node->create_publisher<nav_msgs::msg::Path>("received_global_plan", 1);
+  repos/OpenRobotics/ros2_controller/lqr_controller/src/lqr_controller_ros.cpp:46 - last_time_ = clock_->now();
+  repos/OpenRobotics/ros2_controller/waypoint_generator/src/waypoint_generator.cpp:20 - path_publisher_ = this->create_publisher<nav_msgs::msg::Path>(
+  repos/OpenRobotics/ros2_controller/waypoint_generator/src/waypoint_generator.cpp:21 - "plan", rclcpp::SystemDefaultsQoS());
+  repos/OpenRobotics/ros2_controller/waypoint_generator/src/waypoint_generator.cpp:23 - nav_goal_subscription_ = this->create_subscription<geometry_msgs::msg::PoseStamped>(
+  repos/OpenRobotics/ros2_controller/waypoint_generator/src/waypoint_generator.cpp:24 - "/goal_pose", 10,
+  repos/OpenRobotics/ros2_controller/waypoint_generator/src/path_visualizer_node.cpp:20 - marker_pub_ = this->create_publisher<visualization_msgs::msg::Marker>("path_marker", 10);
+  repos/OpenRobotics/ros2_controller/waypoint_generator/src/path_visualizer_node.cpp:21 - path_publisher_ = this->create_publisher<nav_msgs::msg::Path>("plan", rclcpp::SystemDefaultsQoS());
+  repos/OpenRobotics/ros2_controller/waypoint_generator/src/path_visualizer_node.cpp:21 - path_publisher_ = this->create_publisher<nav_msgs::msg::Path>("plan", rclcpp::SystemDefaultsQoS());
+  repos/OpenRobotics/ros2_controller/waypoint_generator/src/path_visualizer_node.cpp:22 - timer_ = this->create_wall_timer(std::chrono::milliseconds(100), std::bind(&PathVisualizerNode::timer_callback, this));
+  repos/OpenRobotics/ros2_controller/motion_model/src/vehicle_publisher.cpp:23 - vel_publisher_ =  this->create_publisher<geometry_msgs::msg::TwistStamped>(
+  repos/OpenRobotics/ros2_controller/motion_model/src/vehicle_publisher.cpp:24 - "/smart/velocity", 1);
+  repos/OpenRobotics/ros2_controller/motion_model/src/vehicle_publisher.cpp:26 - rear_pose_publisher_ =  this->create_publisher<geometry_msgs::msg::PoseStamped>(
+  repos/OpenRobotics/ros2_controller/motion_model/src/vehicle_publisher.cpp:27 - "/smart/rear_pose", 1);
+  repos/OpenRobotics/ros2_controller/motion_model/src/vehicle_publisher.cpp:29 - center_pose_publisher_ = this->create_publisher<geometry_msgs::msg::PoseStamped>(
+  repos/OpenRobotics/ros2_controller/motion_model/src/vehicle_publisher.cpp:30 - "/smart/center_pose", 1);
+  repos/OpenRobotics/ros2_controller/motion_model/src/vehicle_publisher.cpp:32 - pose_subscription_ = this->create_subscription<geometry_msgs::msg::PoseStamped>(
+  repos/OpenRobotics/ros2_controller/motion_model/src/vehicle_publisher.cpp:33 - "/smart/center_pose", 10,
+  repos/OpenRobotics/ros2_controller/motion_model/src/vehicle_publisher.cpp:36 - model_states_subscription_ = this->create_subscription<gazebo_msgs::msg::ModelStates>(
+  repos/OpenRobotics/ros2_controller/motion_model/src/vehicle_publisher.cpp:37 - "/gazebo/model_states", 10,
+  repos/OpenRobotics/ros2_controller/mpc_controller/src/mpc_controller_ros.cpp:200 - //   global_path_pub_ = node->create_publisher<nav_msgs::msg::Path>("received_global_plan", 1);
+  repos/OpenRobotics/ros2_controller/mpc_controller/src/mpc_controller_ros.cpp:201 - //   carrot_pub_ = node->create_publisher<geometry_msgs::msg::PointStamped>("lookahead_point", 1);
+  repos/OpenRobotics/ros2_controller/mpc_controller/src/mpc_controller_ros.cpp:201 - //   carrot_pub_ = node->create_publisher<geometry_msgs::msg::PointStamped>("lookahead_point", 1);
+  repos/OpenRobotics/ros2_controller/mpc_controller/src/mpc_controller_ros.cpp:202 - //   carrot_arc_pub_ = node->create_publisher<nav_msgs::msg::Path>("lookahead_collision_arc", 1);
+  repos/OpenRobotics/ros2_controller/mpc_controller/src/mpc_controller_ros.cpp:202 - //   carrot_arc_pub_ = node->create_publisher<nav_msgs::msg::Path>("lookahead_collision_arc", 1);
+  repos/OpenRobotics/ros2_controller/casadi_tutorials/casadi_python/casadi_python/publisher_member_function.py:25 - self.publisher_ = self.create_publisher(String, 'topic', 10)
+  repos/OpenRobotics/ros2_controller/casadi_tutorials/casadi_python/casadi_python/publisher_member_function.py:26 - timer_period = 0.5  # seconds
+  repos/OpenRobotics/ros2_controller/casadi_tutorials/casadi_python/casadi_python/__pycache__/publisher_member_function.cpython-310.pyc:5 -    g      ?r   )	super__init__create_publisherr   
+  repos/OpenRobotics/ros2_controller/casadi_tutorials/casadi_python/casadi_python/__pycache__/publisher_member_function.cpython-310.pyc:6 - publisher_create_timertimer_callbacktimeri)selftimer_period	__class__ l/home/quandy/workspace/ros2_ws/ros2_tutorials/build/casadi_python/casadi_python/publisher_member_function.pyr	      s
+
+Results for https://github.com/tomasvr/turtlebot3_drlnav:
+  repos/turtlebot3_drlnav/src/turtlebot3_simulations/turtlebot3_gazebo/src/turtlebot3_drive.cpp:42 - cmd_vel_pub_ = this->create_publisher<geometry_msgs::msg::Twist>("cmd_vel", qos);
+  repos/turtlebot3_drlnav/src/turtlebot3_simulations/turtlebot3_gazebo/src/turtlebot3_drive.cpp:45 - scan_sub_ = this->create_subscription<sensor_msgs::msg::LaserScan>(
+  repos/turtlebot3_drlnav/src/turtlebot3_simulations/turtlebot3_gazebo/src/turtlebot3_drive.cpp:46 - "scan", \
+  repos/turtlebot3_drlnav/src/turtlebot3_simulations/turtlebot3_gazebo/src/turtlebot3_drive.cpp:52 - odom_sub_ = this->create_subscription<nav_msgs::msg::Odometry>(
+  repos/turtlebot3_drlnav/src/turtlebot3_simulations/turtlebot3_gazebo/src/turtlebot3_drive.cpp:53 - "odom", qos, std::bind(&Turtlebot3Drive::odom_callback, this, std::placeholders::_1));
+  repos/turtlebot3_drlnav/src/turtlebot3_simulations/turtlebot3_fake_node/src/turtlebot3_fake_node.cpp:43 - odom_pub_ = this->create_publisher<nav_msgs::msg::Odometry>("odom", qos);
+  repos/turtlebot3_drlnav/src/turtlebot3_simulations/turtlebot3_fake_node/src/turtlebot3_fake_node.cpp:44 - joint_states_pub_ = this->create_publisher<sensor_msgs::msg::JointState>("joint_states", qos);
+  repos/turtlebot3_drlnav/src/turtlebot3_simulations/turtlebot3_fake_node/src/turtlebot3_fake_node.cpp:44 - joint_states_pub_ = this->create_publisher<sensor_msgs::msg::JointState>("joint_states", qos);
+  repos/turtlebot3_drlnav/src/turtlebot3_simulations/turtlebot3_fake_node/src/turtlebot3_fake_node.cpp:45 - tf_pub_ = this->create_publisher<tf2_msgs::msg::TFMessage>("tf", qos);
+  repos/turtlebot3_drlnav/src/turtlebot3_simulations/turtlebot3_fake_node/src/turtlebot3_fake_node.cpp:45 - tf_pub_ = this->create_publisher<tf2_msgs::msg::TFMessage>("tf", qos);
+  repos/turtlebot3_drlnav/src/turtlebot3_simulations/turtlebot3_fake_node/src/turtlebot3_fake_node.cpp:48 - cmd_vel_sub_ = this->create_subscription<geometry_msgs::msg::Twist>(
+  repos/turtlebot3_drlnav/src/turtlebot3_simulations/turtlebot3_fake_node/src/turtlebot3_fake_node.cpp:49 - "cmd_vel", \
+  repos/turtlebot3_drlnav/src/turtlebot3_drl/turtlebot3_drl/drl_environment/drl_environment.py:93 - self.cmd_vel_pub = self.create_publisher(Twist, self.velo_topic, qos)
+  repos/turtlebot3_drlnav/src/turtlebot3_drl/turtlebot3_drl/drl_environment/drl_environment.py:94 - # subscribers
+  repos/turtlebot3_drlnav/src/turtlebot3_drl/turtlebot3_drl/drl_environment/drl_environment.py:95 - self.goal_pose_sub = self.create_subscription(Pose, self.goal_topic, self.goal_pose_callback, qos)
+  repos/turtlebot3_drlnav/src/turtlebot3_drl/turtlebot3_drl/drl_environment/drl_environment.py:96 - self.odom_sub = self.create_subscription(Odometry, self.odom_topic, self.odom_callback, qos)
+  repos/turtlebot3_drlnav/src/turtlebot3_drl/turtlebot3_drl/drl_environment/drl_environment.py:96 - self.odom_sub = self.create_subscription(Odometry, self.odom_topic, self.odom_callback, qos)
+  repos/turtlebot3_drlnav/src/turtlebot3_drl/turtlebot3_drl/drl_environment/drl_environment.py:97 - self.scan_sub = self.create_subscription(LaserScan, self.scan_topic, self.scan_callback, qos_profile=qos_profile_sensor_data)
+  repos/turtlebot3_drlnav/src/turtlebot3_drl/turtlebot3_drl/drl_environment/drl_environment.py:97 - self.scan_sub = self.create_subscription(LaserScan, self.scan_topic, self.scan_callback, qos_profile=qos_profile_sensor_data)
+  repos/turtlebot3_drlnav/src/turtlebot3_drl/turtlebot3_drl/drl_environment/drl_environment.py:98 - self.clock_sub = self.create_subscription(Clock, '/clock', self.clock_callback, qos_profile=qos_clock)
+  repos/turtlebot3_drlnav/src/turtlebot3_drl/turtlebot3_drl/drl_environment/drl_environment.py:98 - self.clock_sub = self.create_subscription(Clock, '/clock', self.clock_callback, qos_profile=qos_clock)
+  repos/turtlebot3_drlnav/src/turtlebot3_drl/turtlebot3_drl/drl_environment/drl_environment.py:99 - self.obstacle_odom_sub = self.create_subscription(Odometry, 'obstacle/odom', self.obstacle_odom_callback, qos)
+  repos/turtlebot3_drlnav/src/turtlebot3_drl/turtlebot3_drl/drl_environment/drl_environment.py:99 - self.obstacle_odom_sub = self.create_subscription(Odometry, 'obstacle/odom', self.obstacle_odom_callback, qos)
+  repos/turtlebot3_drlnav/src/turtlebot3_drl/turtlebot3_drl/drl_environment/drl_environment.py:100 - # clients
+  repos/turtlebot3_drlnav/src/turtlebot3_drl/turtlebot3_drl/drl_environment/drl_environment_real.py:80 - self.cmd_vel_pub = self.create_publisher(Twist, self.velo_topic, qos)
+  repos/turtlebot3_drlnav/src/turtlebot3_drl/turtlebot3_drl/drl_environment/drl_environment_real.py:81 - # subscribers
+  repos/turtlebot3_drlnav/src/turtlebot3_drl/turtlebot3_drl/drl_environment/drl_environment_real.py:82 - self.goal_pose_sub = self.create_subscription(Pose, self.goal_topic, self.goal_pose_callback, qos)
+  repos/turtlebot3_drlnav/src/turtlebot3_drl/turtlebot3_drl/drl_environment/drl_environment_real.py:83 - self.odom_sub = self.create_subscription(Odometry, self.odom_topic, self.odom_callback, qos)
+  repos/turtlebot3_drlnav/src/turtlebot3_drl/turtlebot3_drl/drl_environment/drl_environment_real.py:83 - self.odom_sub = self.create_subscription(Odometry, self.odom_topic, self.odom_callback, qos)
+  repos/turtlebot3_drlnav/src/turtlebot3_drl/turtlebot3_drl/drl_environment/drl_environment_real.py:84 - self.scan_sub = self.create_subscription(LaserScan, self.scan_topic, self.scan_callback, qos_profile=qos_profile_sensor_data)
+  repos/turtlebot3_drlnav/src/turtlebot3_drl/turtlebot3_drl/drl_environment/drl_environment_real.py:84 - self.scan_sub = self.create_subscription(LaserScan, self.scan_topic, self.scan_callback, qos_profile=qos_profile_sensor_data)
+  repos/turtlebot3_drlnav/src/turtlebot3_drl/turtlebot3_drl/drl_environment/drl_environment_real.py:85 - # servers
+  repos/turtlebot3_drlnav/src/turtlebot3_drl/turtlebot3_drl/drl_gazebo/drl_gazebo.py:65 - self.goal_pose_pub = self.create_publisher(Pose, 'goal_pose', QoSProfile(depth=10))
+
+Results for https://github.com/noshluk2/ros2_learners:
+  repos/ros2_learners/robot_math/robot_math/andular_velocity.py:9 - self.publisher_ = self.create_publisher(Twist, '/turtle1/cmd_vel', 10)
+  repos/ros2_learners/robot_math/robot_math/andular_velocity.py:10 - self.timer = self.create_timer(1, self.timer_callback)
+  repos/ros2_learners/robot_math/robot_math/gtg.py:11 - self.cmd_vel_pub = self.create_publisher(Twist, '/turtle1/cmd_vel', 10)
+  repos/ros2_learners/robot_math/robot_math/gtg.py:12 - self.pose_sub = self.create_subscription(Pose, '/turtle1/pose', self.pose_callback, 10)
+  repos/ros2_learners/robot_math/robot_math/gtg.py:12 - self.pose_sub = self.create_subscription(Pose, '/turtle1/pose', self.pose_callback, 10)
+  repos/ros2_learners/robot_math/robot_math/gtg.py:13 - self.timer = self.create_timer(0.1, self.go_to_goal)
+  repos/ros2_learners/navigation_tb3/src/pub_occupancy_grid.cpp:17 - og_pub = this->create_publisher<nav_msgs::msg::OccupancyGrid>("custom_occupancy_grid", 10);
+  repos/ros2_learners/navigation_tb3/src/pub_occupancy_grid.cpp:18 - og_timer = this->create_wall_timer(500ms, std::bind(&OccupancyGrid_Publisher::og_callback, this));
+  repos/ros2_learners/nodes/src/laser_publisher.cpp:16 - laser_publisher = this->create_publisher<sensor_msgs::msg::LaserScan>("scan", 10);
+  repos/ros2_learners/nodes/src/laser_publisher.cpp:17 - laser_timer = this->create_wall_timer(500ms, std::bind(&LaserPublisher::laser_callback, this));
+  repos/ros2_learners/nodes/src/publisher.cpp:21 - publisher_1 = this->create_publisher<std_msgs::msg::String>("topic_1", 10);
+  repos/ros2_learners/nodes/src/publisher.cpp:22 - timer_1 = this->create_wall_timer(500ms, std::bind(&MinimalPublisher::timer_callback_1, this));
+  repos/ros2_learners/nodes/src/publisher.cpp:25 - publisher_2 = this->create_publisher<std_msgs::msg::Int16>("topic_2", 10);
+  repos/ros2_learners/nodes/src/publisher.cpp:26 - timer_2 = this->create_wall_timer(500ms, std::bind(&MinimalPublisher::timer_callback_2, this));
+  repos/ros2_learners/nodes/src/subscriber.cpp:16 - subscription_1 = this->create_subscription<std_msgs::msg::String>("topic_1", 10, std::bind(&MinimalSubscriber::topic_callback_1, this, _1));
+  repos/ros2_learners/nodes/src/subscriber.cpp:18 - subscription_2 = this->create_subscription<std_msgs::msg::Int16>("topic_2", 10, std::bind(&MinimalSubscriber::topic_callback_2, this, _1));
+  repos/ros2_learners/nodes/src/subscriber.cpp:19 - }
+  repos/ros2_learners/ai_assitance/ai_assitance/obstacle_avoidence.py:10 - self.subscription = self.create_subscription(LaserScan, '/scan', self.scan_callback, qos)
+  repos/ros2_learners/ai_assitance/ai_assitance/obstacle_avoidence.py:11 - self.publisher = self.create_publisher(Twist, 'cmd_vel', qos)
+  repos/ros2_learners/ai_assitance/ai_assitance/obstacle_avoidence.py:11 - self.publisher = self.create_publisher(Twist, 'cmd_vel', qos)
+  repos/ros2_learners/ai_assitance/ai_assitance/obstacle_avoidence.py:12 - self.obstacle_detected = False
+  repos/ros2_learners/ai_assitance/ai_assitance/circle_motion.py:11 - self.pub = self.node.create_publisher(Twist, 'cmd_vel',qos)
+  repos/ros2_learners/ai_assitance/ai_assitance/circle_motion.py:12 - self.timer = self.node.create_timer(1.0, self.timer_callback)
+  repos/ros2_learners/turtlebot3_gazebo/src/turtlebot3_drive.cpp:42 - cmd_vel_pub_ = this->create_publisher<geometry_msgs::msg::Twist>("cmd_vel", qos);
+  repos/ros2_learners/turtlebot3_gazebo/src/turtlebot3_drive.cpp:45 - scan_sub_ = this->create_subscription<sensor_msgs::msg::LaserScan>(
+  repos/ros2_learners/turtlebot3_gazebo/src/turtlebot3_drive.cpp:46 - "scan", \
+  repos/ros2_learners/turtlebot3_gazebo/src/turtlebot3_drive.cpp:52 - odom_sub_ = this->create_subscription<nav_msgs::msg::Odometry>(
+  repos/ros2_learners/turtlebot3_gazebo/src/turtlebot3_drive.cpp:53 - "odom", qos, std::bind(&Turtlebot3Drive::odom_callback, this, std::placeholders::_1));
+
+  No matches found for https://github.com/linClubs/BEVFusion-ROS-TensorRT

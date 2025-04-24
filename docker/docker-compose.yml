@@ -1,0 +1,19 @@
+services:
+
+  server:
+    image: michelalbonico/ros:humble-base-ee
+    tty: false
+    stdin_open: false               # docker run -i
+    privileged: true
+    volumes:
+      - source:/projeto
+      - /dev/:/dev/
+    command: ["tail", "-f", "/dev/null"]
+
+volumes:
+  source:
+    driver: local
+    driver_opts:
+      type: none
+      o: bind
+      device: /home/michel/Documents/GitHub/ros2_ee_topics/
