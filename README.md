@@ -1,6 +1,6 @@
-# 🧪 Replication Package for the Paper `XXX`
+# 🧪 Replication Package for the Paper `How ROS 2 Talks and at What Cost: Guidelines for Energy-Aware Topic Communication`
 
-This repository contains the full replication package for the paper titled `How ROS 2 Talks -- and at What Cost: Mining Topic Communication Energy Use`, submitted to the conference `ESEM 2025`.
+This repository contains the full replication package for the paper titled `How ROS 2 Talks and at What Cost: Guidelines for Energy-Aware Topic Communication`, submitted to the `ICSEP-SEIP 2025`.
 
 ---
 
