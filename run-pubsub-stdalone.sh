@@ -3,7 +3,7 @@
 _start=1
 _end=20
 
-source /opt/ros/humble/setup.bash
+source /opt/ros/jazzy/setup.bash
 
 server_name='publisher'
 client_name='subscriber'
