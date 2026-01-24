@@ -121,11 +121,6 @@ cd ../powerjoular
 gprbuild
 ```
 
-## Clone the Experiment Runner
-
-
-
-
 ---
 
 ## 🧪 Running Experiments
