@@ -1,3 +1,3 @@
-source /opt/ros/humble/setup.bash
-export EXPERIMENT_PATH="/home/michel/Documents/GitHub/ros2_ee_topics"
+source /opt/ros/jazzy/setup.bash
+export EXPERIMENT_PATH="/home/micel/ICSE-SEIP-ROS-Topic-rep-pkg"
 export EXPERIMENT_RUNNER_PATH="../experiment-runner/experiment-runner/"
