@@ -55,7 +55,7 @@ class SharedMemoryPublisher(Node):
         raw = bytes(self.shm.buf[4:4+size])
         msg = deserialize_message(raw, self.msg_type)
         self.publisher.publish(msg)
-        self.get_logger().info(f"Published message of size {size} bytes")
+        self.get_logger().info(f"Published message [{msg}] of size {size} bytes")
 
 def main():
     import argparse
