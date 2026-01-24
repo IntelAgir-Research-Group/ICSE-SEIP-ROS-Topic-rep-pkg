@@ -7,6 +7,7 @@ from multiprocessing import shared_memory
 import numpy as np
 from rclpy.serialization import serialize_message
 from shared_config import SHM_NAME, MAX_MSG_SIZE
+import random
 
 def get_message_type(msg_type_str):
     msg_types = {
