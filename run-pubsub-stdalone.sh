@@ -73,9 +73,6 @@ if [[ -f "$file" ]]; then
     ps -fC $client_name
     echo "Client PID: $LISTENER_PID"
     
-    echo "Running network profiler..."
-    python3 ./exp_runners/profilers/network.py $d_folder/network.csv $etime &
-
     echo "Running PowerJoular"
     /usr/bin/powerjoular -p $TALKER_PID -f 'energy-server-powerjoular.csv' &
     /usr/bin/powerjoular -p $LISTENER_PID -f 'energy-client-powerjoular.csv' &
