@@ -4,10 +4,41 @@ from rclpy.node import Node
 import struct
 from multiprocessing import shared_memory
 from rclpy.serialization import deserialize_message
-from your_message_module import get_message_type  # import your get_message_type function
 from shared_config import SHM_NAME, MAX_MSG_SIZE
 
+def load_module(module_name):
+    import importlib
+    return importlib.import_module(module_name)
+
+def get_message_type(msg_type_str):
+    msg_types = {
+        'Image': 'sensor_msgs.msg',
+        'Pose': 'geometry_msgs.msg',
+        'PointCloud': 'sensor_msgs.msg',
+        'PointCloud2': 'sensor_msgs.msg',
+        'Imu': 'sensor_msgs.msg',
+        'String': 'std_msgs.msg',
+        'PoseStamped': 'geometry_msgs.msg',
+        'LaserScan': 'sensor_msgs.msg',
+        'Float64': 'std_msgs.msg',
+        'Float32': 'std_msgs.msg',
+        'Vector3': 'geometry_msgs.msg',
+        'Float64MultiArray': 'std_msgs.msg',
+        'PoseWithCovariance': 'geometry_msgs.msg',
+        'PoseWithCovarianceStamped': 'geometry_msgs.msg',
+        'Int32': 'std_msgs.msg',
+        'Twist': 'geometry_msgs.msg',
+        'JointState': 'sensor_msgs.msg'
+    }
+
+    msg_module_str = msg_types.get(msg_type_str, None)
+    if msg_module_str:
+        msgs_module = load_module(msg_module_str)
+        return getattr(msgs_module, msg_type_str)
+    return None
+
 class SharedMemoryPublisher(Node):
+
     def __init__(self, msg_type, topic):
         super().__init__("shm_publisher")
         self.publisher = self.create_publisher(msg_type, topic, 10)
@@ -39,6 +70,8 @@ def main():
     if not msg_type:
         print(f"Unsupported message type: {args.message_type}")
         return
+    
+    get_message_type(msg_type)
 
     rclpy.init()
     node = SharedMemoryPublisher(msg_type, f"{args.message_type.lower()}_topic")
