@@ -57,14 +57,6 @@ sudo apt update
 sudo apt install docker.io docker-compose
 ```
 
-### 🛠️ ROS 2 Installation (if not installed)
-
-```bash
-sudo apt install ros-humble-ros-base
-```
-
----
-
 ## 🔎 Crawling ROS 2 Repositories
 
 Before crawling, set your GitHub token as an environment variable:
@@ -110,8 +102,29 @@ The result of this execution is saved in the `./resources/repos-pubsub.txt` file
 
 ## 🧬 Extracting Message Types and Topics
 
-
 TBA: We are still cleaning this code.
+
+---
+
+### 🛠️ ROS 2 Installation (if not installed)
+
+```bash
+sudo apt install ros-jazzy-ros-base
+```
+
+## Installing PowerJoular - For Energy Measurement
+
+```bash
+sudo apt install gnat gprbuild
+git clone https://github.com/joular/powerjoular.git ../powerjoular
+cd ../powerjoular
+gprbuild
+```
+
+## Clone the Experiment Runner
+
+
+
 
 ---
 
