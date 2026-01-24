@@ -50,15 +50,12 @@ class SharedMemoryPublisher(Node):
     def publish_from_shm(self):
         # Read message size
         size = struct.unpack("I", self.shm.buf[:4])[0]
-        if size == 0 or size == self.last_size:
-            return  # no new message
-
-        self.last_size = size
+        if size == 0:
+            return
         raw = bytes(self.shm.buf[4:4+size])
         msg = deserialize_message(raw, self.msg_type)
         self.publisher.publish(msg)
         self.get_logger().info(f"Published message of size {size} bytes")
-
 
 def main():
     import argparse
