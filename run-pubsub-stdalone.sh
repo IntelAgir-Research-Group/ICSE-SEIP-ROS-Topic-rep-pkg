@@ -66,8 +66,14 @@ if [[ -f "$file" ]]; then
     echo "Subscriber PID: $LISTENER_PID"
     
     echo "Running PowerJoular"
-    /usr/bin/powerjoular -p $TALKER_PID -f 'energy-server-powerjoular.csv' &
-    /usr/bin/powerjoular -p $LISTENER_PID -f 'energy-client-powerjoular.csv' &
+    {
+      /usr/bin/powerjoular -p "$TALKER_PID"   -f energy-server-powerjoular.csv   &
+      srv_mon=$!
+      /usr/bin/powerjoular -p "$LISTENER_PID" -f energy-client-powerjoular.csv   &
+      cli_mon=$!
+      wait "$srv_mon" "$cli_mon"
+    } &
+
 
     spent_time=0
 
