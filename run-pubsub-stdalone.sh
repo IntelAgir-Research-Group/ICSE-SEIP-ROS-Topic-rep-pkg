@@ -65,12 +65,13 @@ if [[ -f "$file" ]]; then
 
     sleep 10
 
-    TALKER_PID=`ps -fC $server_name | tail -1 | grep [0-9] | awk '{ print $2}'`
-    ps -fC $server_name
-    echo "Server PID: $TALKER_PID"
+    # TALKER_PID=`ps -fC $server_name | tail -1 | grep [0-9] | awk '{ print $2}'`
+    # ps -fC $server_name
+    TALKER_PID=`cat /tmp/publisher.pid`
+    echo "Publisher PID: $TALKER_PID"
     LISTENER_PID=`ps -fC $client_name | tail -1 | grep [0-9] | awk '{ print $2}'`
     ps -fC $client_name
-    echo "Client PID: $LISTENER_PID"
+    echo "Subscriber PID: $LISTENER_PID"
     
     echo "Running PowerJoular"
     /usr/bin/powerjoular -p $TALKER_PID -f 'energy-server-powerjoular.csv' &
