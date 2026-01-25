@@ -40,7 +40,7 @@ if [[ -f "$file" ]]; then
 
     # Custom profiler
     echo "Server..."
-    python3 mon-rapl.py -c server -t $etime -f $interval -m $type -s $size -r 0 &> /dev/null & 
+    python3 mon-rapl.py -c server -t $etime -f $interval -m $type -s $size -r 0 &> mon-rapl-server.log & 
     SERVER_PID=$!
     echo "Started mon-rapl.py with PID $SERVER_PID"
 
@@ -49,7 +49,7 @@ if [[ -f "$file" ]]; then
     for i in $(seq 1 ${cli}); do
       echo "Client..."
       rapl="-r 0"
-      python3 mon-rapl.py -c client -m $type $rapl &> /dev/null &
+      python3 mon-rapl.py -c client -m $type $rapl &> mon-rapl-client.log &
       CLIENT_PID=$!
       echo "Started mon-rapl.py with PID $CLIENT_PID"
     done
