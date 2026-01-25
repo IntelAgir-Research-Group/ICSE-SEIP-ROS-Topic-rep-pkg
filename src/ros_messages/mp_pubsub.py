@@ -350,7 +350,7 @@ def publisher_loop(q: mp.Queue, stop_evt: mp.Event, msg_type_str: str, topic: st
         def on_timer(self):
             # Drain queue quickly to reduce latency
             drained = 0
-            while not q.empty():
+            while True:
                 try:
                     payload: Payload = q.get_nowait()
                 except Exception:
