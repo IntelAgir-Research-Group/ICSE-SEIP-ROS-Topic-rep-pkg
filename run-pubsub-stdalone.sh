@@ -38,12 +38,6 @@ if [[ -f "$file" ]]; then
     rm -Rf $d_folder
     mkdir -p $d_folder
 
-    # Creating measurement files
-    echo "exec,label,timestamp,cpu,mem" > $d_folder/server-cpu-mem.csv
-    echo "exec,label,timestamp,cpu,mem" > $d_folder/client-cpu-mem.csv
-    echo "exec,label,timestamp,cpu" > $d_folder/server-cpu.csv
-    echo "exec,label,timestamp,cpu" > $d_folder/client-cpu.csv
-
     # Custom profiler
     echo "Server..."
     python3 mon-rapl.py -c server -t $etime -f $interval -m $type -s $size -r 0 &> /dev/null & 
@@ -55,15 +49,12 @@ if [[ -f "$file" ]]; then
     for i in $(seq 1 ${cli}); do
       echo "Client..."
       rapl="-r 0"
-      # if [ $i -eq $cli ]; then
-      #     rapl="-r 1"
-      # fi
       python3 mon-rapl.py -c client -m $type $rapl &> /dev/null &
       CLIENT_PID=$!
       echo "Started mon-rapl.py with PID $CLIENT_PID"
     done
 
-    sleep 10
+    sleep 2
 
     # TALKER_PID=`ps -fC $server_name | tail -1 | grep [0-9] | awk '{ print $2}'`
     # ps -fC $server_name
@@ -75,13 +66,8 @@ if [[ -f "$file" ]]; then
     echo "Subscriber PID: $LISTENER_PID"
     
     echo "Running PowerJoular"
-    /usr/bin/powerjoular -p $TALKER_PID -f 'energy-server-powerjoular.csv' &
-    /usr/bin/powerjoular -p $LISTENER_PID -f 'energy-client-powerjoular.csv' &
-
-    CPU=0.0
-    MEM=0
-    CPU_L=0.0
-    MEM_L=0
+    # /usr/bin/powerjoular -p $TALKER_PID -f 'energy-server-powerjoular.csv' &
+    # /usr/bin/powerjoular -p $LISTENER_PID -f 'energy-client-powerjoular.csv' &
 
     spent_time=0
 
@@ -91,8 +77,9 @@ if [[ -f "$file" ]]; then
         spent_time=$(echo "$spent_time + 0.5" | bc)
         if [ "$(echo "$spent_time > $etime" | bc)" -eq 1 ]; then
           echo "Timeout!"
-          pkill -9 -f $server_name
-          pkill -9 -f $client_name
+          kill $SERVER_PID
+          kill $CLIENT_PID
+          pkill -9 -f python3
           pkill -9 -f powerjoular
         fi
     done 
