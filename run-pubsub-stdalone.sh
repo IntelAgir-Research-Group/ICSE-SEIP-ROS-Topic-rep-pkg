@@ -69,8 +69,9 @@ if [[ -f "$file" ]]; then
     # ps -fC $server_name
     TALKER_PID=`cat /tmp/publisher.pid`
     echo "Publisher PID: $TALKER_PID"
-    LISTENER_PID=`ps -fC $client_name | tail -1 | grep [0-9] | awk '{ print $2}'`
-    ps -fC $client_name
+    LISTENER_PID=`cat /tmp/listener.pid`
+    # LISTENER_PID=`ps -fC $client_name | tail -1 | grep [0-9] | awk '{ print $2}'`
+    # ps -fC $client_name
     echo "Subscriber PID: $LISTENER_PID"
     
     echo "Running PowerJoular"
