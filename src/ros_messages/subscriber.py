@@ -1,3 +1,4 @@
+import os
 import rclpy
 from rclpy.node import Node
 import argparse
@@ -14,6 +15,13 @@ def create_listener_node(msg_type, topic_name):
     class ListenerNode(Node):
         def __init__(self):
             super().__init__('listener')
+
+            self.pid = os.getpid()  # <-- get the PID
+                self.get_logger().info(f'Listener PID: {self.pid}')
+            
+            with open("/tmp/listener.pid", "w") as f:
+                f.write(str(self.pid))
+
             self.subscription = self.create_subscription(
                 msg_type,
                 topic_name,
