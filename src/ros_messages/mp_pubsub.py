@@ -397,7 +397,7 @@ def main():
     parser.add_argument('--topic', type=str, default=None, help='Topic name (default: <message_type_lower>_topic)')
     parser.add_argument('--gen_rate', type=float, default=10.0, help='Generation rate (Hz)')
     parser.add_argument('--pub_timer', type=float, default=0.01, help='Publisher timer period (s)')
-    parser.add_argument('--queue_size', type=int, default=256, help='Bounded queue size between processes')
+    parser.add_argument('--queue_size', type=int, default=64, help='Bounded queue size between processes')
     parser.add_argument('--sensor_qos', action='store_true', help='Use qos_profile_sensor_data for publisher')
     args = parser.parse_args()
 
@@ -436,8 +436,8 @@ def main():
         pid = pub.pid
         with open("/tmp/publisher.pid", "w") as f:
             f.write(str(pid))
-        prod.join(timeout=5)
-        pub.join(timeout=5)
+        prod.join()
+        pub.join()
 
 if __name__ == '__main__':
     main()
