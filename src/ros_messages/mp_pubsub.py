@@ -2,6 +2,7 @@
 import argparse
 import importlib
 import multiprocessing as mp
+import os
 import signal
 import sys
 import time
@@ -336,6 +337,13 @@ def publisher_loop(q: mp.Queue, stop_evt: mp.Event, msg_type_str: str, topic: st
     class PublisherNode(Node):
         def __init__(self):
             super().__init__('mp_publisher_node')
+
+            self.pid = os.getpid()  # <-- get the PID
+            self.get_logger().info(f'Publisher PID: {self.pid}')
+            
+            with open("/tmp/publisher.pid", "w") as f:
+                f.write(str(self.pid))
+
             qos = qos_profile_sensor_data if use_sensor_qos else QoSProfile(
                 depth=10,
                 reliability=ReliabilityPolicy.RELIABLE,
@@ -433,9 +441,6 @@ def main():
         pass
     finally:
         stop_evt.set()
-        pid = pub.pid
-        with open("/tmp/publisher.pid", "w") as f:
-            f.write(str(pid))
         prod.join()
         pub.join()
 
