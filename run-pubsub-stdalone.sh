@@ -71,7 +71,7 @@ if [[ -f "$file" ]]; then
 
     spent_time=0
 
-    while "$(echo "$spent_time < $etime" | bc)" -eq 1; do
+    while [ "$(echo "$spent_time < $etime" | bc -l)" -eq 1 ]; do
         TIME=$(date +%s)
         sleep 0.1
         spent_time=$(echo "$spent_time + 0.5" | bc)
