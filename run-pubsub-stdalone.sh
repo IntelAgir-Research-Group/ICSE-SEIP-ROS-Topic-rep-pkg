@@ -85,26 +85,8 @@ if [[ -f "$file" ]]; then
 
     spent_time=0
 
-    while kill -0 $SERVER_PID 2> /dev/null || kill -0 $CLIENT_PID 2> /dev/null || "$(echo "$spent_time < $etime" | bc)" -eq 1; do
+    while "$(echo "$spent_time < $etime" | bc)" -eq 1; do
         TIME=$(date +%s)
-        CURRENT_CPU_PS=`ps -C $server_name -o %cpu | tail -1 | grep [0-9]`
-        CURRENT_CPU=`top -bn1 | grep $server_name | tail -1 | awk '{print $9}'`
-        CURRENT_CPU=`echo $CURRENT_CPU | sed 's/,/./g'`
-        CURRENT_CPU_L_PS=`ps -C $client_name -o %cpu | tail -1 | grep [0-9]`
-        CURRENT_CPU_L=`top -bn1 | grep $client_name | tail -1 | awk '{print $9}'` 
-        CURRENT_CPU_L=`echo $CURRENT_CPU_L | sed 's/,/./g'`
-        CURRENT_MEM=`pmap $SERVER_PID | head -3 | tail -1 | awk '{ print $2 }' | sed 's/K//'`
-        CURRENT_MEM_L=`pmap $CLIENT_PID | head -4 | tail -1 | awk '{ print $2 }' | sed 's/K//'`
-        CPU=`python3 -c "print (float($CURRENT_CPU))"`
-        CPU_L=`python3 -c "print (float($CURRENT_CPU_L))"`
-        MEM=`python3 -c "print (float($CURRENT_MEM))"`
-        MEM_L=`python3 -c "print (float($CURRENT_MEM_L))"`
-        
-        echo "$COUNT,talker,$TIME,$CPU,$MEM" >> $d_folder/server-cpu-mem.csv
-        echo "$COUNT,listener,$TIME,$CPU_L,$MEM_L" >> $d_folder/client-cpu-mem.csv
-
-        echo "$COUNT,talker,$TIME,$CURRENT_CPU_PS" >> $d_folder/server-cpu.csv
-        echo "$COUNT,listener,$TIME,$CURRENT_CPU_L_PS" >> $d_folder/client-cpu.csv
         sleep 0.1
         spent_time=$(echo "$spent_time + 0.5" | bc)
         if [ "$(echo "$spent_time > $etime" | bc)" -eq 1 ]; then
