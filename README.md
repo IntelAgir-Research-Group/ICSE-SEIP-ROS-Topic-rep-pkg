@@ -50,13 +50,6 @@ source .venv/bin/activate
 pip install -r requirements.txt
 ```
 
-### 🐳 Docker Installation (if not installed)
-
-```bash
-sudo apt update
-sudo apt install docker.io docker-compose
-```
-
 ## 🔎 Crawling ROS 2 Repositories
 
 Before crawling, set your GitHub token as an environment variable:
