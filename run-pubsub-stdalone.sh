@@ -78,7 +78,7 @@ if [[ -f "$file" ]]; then
 
     while [ "$(echo "$spent_time < $etime" | bc -l)" -eq 1 ]; do
         TIME=$(date +%s)
-        sleep 0.1
+        sleep 0.5
         spent_time=$(echo "$spent_time + 0.5" | bc)
         if [ "$(echo "$spent_time > $etime" | bc)" -eq 1 ]; then
           echo "Timeout!"
