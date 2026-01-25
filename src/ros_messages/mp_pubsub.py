@@ -427,16 +427,15 @@ def main():
     prod.start()
     pub.start()
 
-    pid = pub.pid
-    with open("/tmp/publisher.pid", "w") as f:
-        f.write(str(pid))
-
     try:
         time.sleep(args.execution_time)
     except KeyboardInterrupt:
         pass
     finally:
         stop_evt.set()
+        pid = pub.pid
+        with open("/tmp/publisher.pid", "w") as f:
+            f.write(str(pid))
         prod.join(timeout=5)
         pub.join(timeout=5)
 
