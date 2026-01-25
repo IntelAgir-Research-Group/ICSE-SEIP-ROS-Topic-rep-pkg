@@ -363,6 +363,7 @@ def publisher_loop(q: mp.Queue, stop_evt: mp.Event, msg_type_str: str, topic: st
                     self.pub.publish(msg)
                     self.published += 1
                     drained += 1
+                    self.get_logger().debug(f"Published #{self.published}")
                 except Exception as e:
                     self.get_logger().error(f"Deser/Publish failed: {e}")
             if drained == 0:
