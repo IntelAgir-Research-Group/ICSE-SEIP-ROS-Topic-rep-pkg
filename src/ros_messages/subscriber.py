@@ -17,7 +17,7 @@ def create_listener_node(msg_type, topic_name):
             super().__init__('listener')
 
             self.pid = os.getpid()  # <-- get the PID
-                self.get_logger().info(f'Listener PID: {self.pid}')
+            self.get_logger().info(f'Listener PID: {self.pid}')
             
             with open("/tmp/listener.pid", "w") as f:
                 f.write(str(self.pid))
