@@ -379,29 +379,6 @@ def publisher_loop(q: mp.Queue, stop_evt: mp.Event, msg_type_str: str, topic: st
                     drained += 1
                 except Exception as e:
                     self.get_logger().error(f"Deser/Publish failed: {e!r}")
-                    # continue draining next item
-
-        # def on_timer(self):
-        #     # Drain queue quickly to reduce latency
-        #     drained = 0
-        #     while not q.empty():
-        #         try:
-        #             payload: Payload = q.get_nowait()
-        #         except Exception:
-        #             break
-        #         try:
-        #             msg = deserialize_message(payload.data, msg_class)
-        #             # Restamp with ROS time if header exists
-        #             if hasattr(msg, "header"):
-        #                 msg.header.stamp = self.get_clock().now().to_msg()
-        #             self.pub.publish(msg)
-        #             self.published += 1
-        #             drained += 1
-        #         except Exception as e:
-        #             self.get_logger().error(f"Deser/Publish failed: {e}")
-        #     if drained == 0:
-        #         # (Optional) log rarely if idle
-        #         pass
 
     def shutdown_handler(signum, frame):
         stop_evt.set()
@@ -431,7 +408,7 @@ def main():
     parser.add_argument('--topic', type=str, default=None, help='Topic name (default: <message_type_lower>_topic)')
     parser.add_argument('--gen_rate', type=float, default=10.0, help='Generation rate (Hz)')
     parser.add_argument('--pub_timer', type=float, default=0.01, help='Publisher timer period (s)')
-    parser.add_argument('--queue_size', type=int, default=64, help='Bounded queue size between processes')
+    parser.add_argument('--queue_size', type=int, default=128, help='Bounded queue size between processes')
     parser.add_argument('--sensor_qos', action='store_true', help='Use qos_profile_sensor_data for publisher')
     args = parser.parse_args()
 
