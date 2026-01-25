@@ -93,6 +93,9 @@ if [[ -f "$file" ]]; then
         echo "Timeout!"
     fi
 
+    pkill -9 -f python3
+    pkill -9 -f powerjoular
+
     sleep 5
     
     cp -f energy-* $d_folder
