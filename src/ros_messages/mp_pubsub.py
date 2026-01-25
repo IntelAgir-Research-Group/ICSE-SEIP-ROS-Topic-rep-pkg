@@ -1,14 +1,13 @@
 
-#!/usr/bin/env python3
 import argparse
 import importlib
-import random
+import multiprocessing as mp
+import signal
 import sys
-from time import time
+import time
+from dataclasses import dataclass
 
 import numpy as np
-import rclpy
-from rclpy.node import Node
 
 def get_message_type(msg_type_str: str):
     msg_types = {
@@ -36,24 +35,17 @@ def get_message_type(msg_type_str: str):
     msgs_module = importlib.import_module(msg_module_str)
     return getattr(msgs_module, msg_type_str, None)
 
-# ---------------------------
-# Message factories
-# ---------------------------
-
 def repeat(text, times):
     return text * times
 
 def create_image_sample(size=1):
-    # Try cv_bridge first
     try:
         Image = importlib.import_module('sensor_msgs.msg').Image
         CvBridge = importlib.import_module('cv_bridge').CvBridge
         has_cv_bridge = True
     except Exception:
-        # Fallback to manual Image construction
         Image = importlib.import_module('sensor_msgs.msg').Image
         has_cv_bridge = False
-        CvBridge = None  # noqa
 
     dim_map = {1: (86, 86), 2: (105, 105), 3: (148, 148)}
     dims = dim_map.get(size)
@@ -67,7 +59,6 @@ def create_image_sample(size=1):
         bridge = CvBridge()
         image_msg = bridge.cv2_to_imgmsg(img, encoding='bgr8')
     else:
-        # Manual construction if cv_bridge is not available
         image_msg = Image()
         image_msg.height = height
         image_msg.width = width
@@ -86,10 +77,10 @@ def create_float64_multiarray(msg, size):
     if num_elements is None:
         raise ValueError("Size must be '1', '2', or '3'")
     msg.data = np.random.rand(num_elements).astype(np.float64).tolist()
-    # layout optional; skipped
     return msg
 
 def create_imu(msg, msg_size):
+    import random
     if msg_size >= 1:
         msg.angular_velocity.x = random.uniform(-1.0, 1.0)
         msg.linear_acceleration.x = random.uniform(-9.8, 9.8)
@@ -105,17 +96,14 @@ def create_imu(msg, msg_size):
 def create_pointcloud(msg, msg_size):
     from sensor_msgs.msg import ChannelFloat32
     from geometry_msgs.msg import Point32
-
     bytes_per_point = 12
     max_bytes = 65536
     scale_map = {1: 1 / 3, 2: 1 / 2, 3: 1.0}
     scale = scale_map.get(msg_size, 1.0)
     num_points = int((max_bytes * scale) // bytes_per_point)
-
     msg.header.frame_id = "map"
     points_np = np.random.rand(num_points, 3).astype(np.float32)
     msg.points = [Point32(x=float(p[0]), y=float(p[1]), z=float(p[2])) for p in points_np]
-
     channel = ChannelFloat32()
     channel.name = "intensity"
     channel.values = np.random.rand(num_points).astype(np.float32).tolist()
@@ -124,13 +112,11 @@ def create_pointcloud(msg, msg_size):
 
 def create_pointcloud2(msg, msg_size):
     from sensor_msgs.msg import PointField
-
-    bytes_per_point = 12  # 3 * float32
+    bytes_per_point = 12
     max_bytes = 65536
     scale_map = {1: 1 / 3, 2: 1 / 2, 3: 1.0}
     scale = scale_map.get(msg_size, 1.0)
     num_points = int((max_bytes * scale) // bytes_per_point)
-
     msg.header.frame_id = "map"
     msg.height = 1
     msg.width = num_points
@@ -142,7 +128,6 @@ def create_pointcloud2(msg, msg_size):
     msg.is_bigendian = False
     msg.point_step = bytes_per_point
     msg.row_step = msg.point_step * msg.width
-    # Random xyz points
     msg.data = np.random.rand(num_points * 3).astype(np.float32).tobytes()
     msg.is_dense = True
     return msg
@@ -153,7 +138,6 @@ def create_laserscan(msg, msg_size):
     scale_map = {1: 1 / 3, 2: 1 / 2, 3: 1.0}
     scale = scale_map.get(msg_size, 1.0)
     num_ranges = max(1, int((max_bytes * scale) // bytes_per_range))
-
     msg.header.frame_id = "laser"
     msg.angle_min = -1.57
     msg.angle_max = 1.57
@@ -204,7 +188,6 @@ def create_pose_with_covariance(msg, msg_size):
 
 def create_pose_with_covariance_stamped(msg, msg_size):
     msg.header.frame_id = "map"
-    # Fill the inner pose-with-covariance in place and return the stamped message
     create_pose_with_covariance(msg.pose, msg_size)
     return msg
 
@@ -230,26 +213,23 @@ def create_joint_state(msg, msg_size):
     return msg
 
 def create_msg(msg_type: str, msg_size: int):
-    # Simple validation to avoid zero division in scalar messages
     if msg_size not in (1, 2, 3):
         raise ValueError("message_size must be 1, 2, or 3")
-
     max_size = 1024
     data_size = {1: max_size // 3, 2: max_size // 2, 3: max_size}[msg_size]
     msg_class = get_message_type(msg_type)
     if msg_class is None:
         return None
     msg = msg_class()
-
     match msg_type:
         case 'String':
             msg.data = repeat('Hello, World! ', msg_size)
         case 'Float32':
-            msg.data = 3.4e+38 / (5 - msg_size)  # denominators: 4,3,2
+            msg.data = 3.4e+38 / (5 - msg_size)
         case 'Float64':
-            msg.data = sys.float_info.max / (4 - msg_size)  # denominators: 3,2,1
+            msg.data = sys.float_info.max / (4 - msg_size)
         case 'Int32':
-            msg.data = (2**31 - 1) // (4 - msg_size)  # denominators: 3,2,1
+            msg.data = (2**31 - 1) // (4 - msg_size)
         case 'Image':
             msg = create_image_sample(size=msg_size)
         case 'Float64MultiArray':
@@ -280,65 +260,185 @@ def create_msg(msg_type: str, msg_size: int):
             return None
     return msg
 
-# ---------------------------
-# Publisher node
-# ---------------------------
+@dataclass
+class Payload:
+    """Container for serialized data + optional meta."""
+    data: bytes
+    # You can add fields like generation_time, seq, etc.
 
-class PublisherNode(Node):
-    def __init__(self, msg_type, topic_name, msg_type_str, msg_size, interval):
-        super().__init__('publisher_node')
-        self.publisher_ = self.create_publisher(msg_type, topic_name, 10)
-        self.timer = self.create_timer(interval, self.publish_message)
-        self.msg_type_str = msg_type_str
-        self.msg_size = msg_size
-        self.get_logger().info(f'Publishing {msg_type.__name__} messages on {topic_name}')
+def producer_loop(q: mp.Queue, stop_evt: mp.Event, msg_type_str: str, msg_size: int, gen_rate_hz: float):
+    """Generates messages, serializes to bytes, pushes into a bounded Queue."""
+    from rclpy.serialization import serialize_message
 
-    def publish_message(self):
-        msg = create_msg(self.msg_type_str, self.msg_size)
-        if msg is None:
-            self.get_logger().warn(f"Failed to create message for type '{self.msg_type_str}'. Skipping publish.")
-            return
-
-        # Stamp with ROS time if the message has a header
-        if hasattr(msg, "header"):
-            msg.header.stamp = self.get_clock().now().to_msg()
-        try:
-            self.publisher_.publish(msg)
-        except Exception as e:
-            self.get_logger().error(f"Publish failed: {e}")
-
-# ---------------------------
-# Main
-# ---------------------------
-
-def main():
-    parser = argparse.ArgumentParser(description='ROS 2 Message Publisher')
-    parser.add_argument('--execution_time', type=int, default=60, help='Total execution time in seconds')
-    parser.add_argument('--interval', type=float, default=1.0, help='Publishing interval in seconds')
-    parser.add_argument('--message_type', type=str, required=True, help='Message type to publish')
-    parser.add_argument('--message_size', type=int, required=True, choices=[1, 2, 3], help='Message size (1, 2, or 3)')
-    parser.add_argument('--topic', type=str, default=None, help='Topic name (default: <message_type_lower>_topic)')
-    args = parser.parse_args()
-
-    msg_type = get_message_type(args.message_type)
-    if not msg_type:
-        print(f"Error: Unsupported message type '{args.message_type}'")
+    msg_class = get_message_type(msg_type_str)
+    if msg_class is None:
+        print(f"[Producer] Unsupported message type: {msg_type_str}", flush=True)
         return
 
-    topic_name = args.topic if args.topic else f"{args.message_type.lower()}_topic"
+    period = 1.0 / gen_rate_hz if gen_rate_hz > 0 else 0.0
+    dropped = 0
+    produced = 0
+
+    print(f"[Producer] Starting. Type={msg_type_str}, size={msg_size}, rate={gen_rate_hz} Hz", flush=True)
+
+    next_t = time.perf_counter()
+    while not stop_evt.is_set():
+        # Generate and serialize
+        msg = create_msg(msg_type_str, msg_size)
+        if msg is None:
+            # Shouldn't happen unless type unsupported
+            continue
+        try:
+            data = serialize_message(msg)
+        except Exception as e:
+            print(f"[Producer] Serialization failed: {e}", flush=True)
+            continue
+
+        # Put into queue with drop-oldest policy if full (to keep latency bounded)
+        placed = False
+        while not placed and not stop_evt.is_set():
+            try:
+                q.put_nowait(Payload(data=data))
+                placed = True
+                produced += 1
+            except mp.queues.Full:
+                # Drop one oldest then retry
+                try:
+                    q.get_nowait()
+                    dropped += 1
+                except Exception:
+                    pass
+
+        # pacing
+        if period > 0:
+            next_t += period
+            sleep_dt = next_t - time.perf_counter()
+            if sleep_dt > 0:
+                time.sleep(sleep_dt)
+            else:
+                # running behind; catch up next iteration
+                next_t = time.perf_counter()
+
+    print(f"[Producer] Stopping. produced={produced}, dropped={dropped}", flush=True)
+
+def publisher_loop(q: mp.Queue, stop_evt: mp.Event, msg_type_str: str, topic: str, pub_timer_period: float, use_sensor_qos: bool):
+    """Consumes serialized bytes, deserializes to ROS messages, stamps and publishes."""
+    import rclpy
+    from rclpy.node import Node
+    from rclpy.serialization import deserialize_message
+    from rclpy.qos import QoSProfile, ReliabilityPolicy, HistoryPolicy, DurabilityPolicy, qos_profile_sensor_data
+
+    msg_class = get_message_type(msg_type_str)
+    if msg_class is None:
+        print(f"[Publisher] Unsupported message type: {msg_type_str}", flush=True)
+        return
+
+    class PublisherNode(Node):
+        def __init__(self):
+            super().__init__('mp_publisher_node')
+            qos = qos_profile_sensor_data if use_sensor_qos else QoSProfile(
+                depth=10,
+                reliability=ReliabilityPolicy.RELIABLE,
+                history=HistoryPolicy.KEEP_LAST,
+                durability=DurabilityPolicy.VOLATILE,
+            )
+            self.pub = self.create_publisher(msg_class, topic, qos)
+            self.published = 0
+            self.dropped = 0
+            self.timer = self.create_timer(pub_timer_period, self.on_timer)
+
+        def on_timer(self):
+            # Drain queue quickly to reduce latency
+            drained = 0
+            while not q.empty():
+                try:
+                    payload: Payload = q.get_nowait()
+                except Exception:
+                    break
+                try:
+                    msg = deserialize_message(payload.data, msg_class)
+                    # Restamp with ROS time if header exists
+                    if hasattr(msg, "header"):
+                        msg.header.stamp = self.get_clock().now().to_msg()
+                    self.pub.publish(msg)
+                    self.published += 1
+                    drained += 1
+                except Exception as e:
+                    self.get_logger().error(f"Deser/Publish failed: {e}")
+            if drained == 0:
+                # (Optional) log rarely if idle
+                pass
+
+    def shutdown_handler(signum, frame):
+        stop_evt.set()
+
+    signal.signal(signal.SIGINT, shutdown_handler)
+    signal.signal(signal.SIGTERM, shutdown_handler)
 
     rclpy.init()
-    node = PublisherNode(msg_type, topic_name, args.message_type, args.message_size, args.interval)
+    node = PublisherNode()
+    node.get_logger().info(f"Publishing {msg_type_str} on '{topic}' (timer={pub_timer_period:.3f}s, sensor_qos={use_sensor_qos})")
 
-    start_time = time()
     try:
-        while rclpy.ok() and (time() - start_time) < args.execution_time:
-            rclpy.spin_once(node, timeout_sec=0.1)
+        while rclpy.ok() and not stop_evt.is_set():
+            rclpy.spin_once(node, timeout_sec=0.05)
     except KeyboardInterrupt:
         pass
     finally:
+        node.get_logger().info(f"Publisher exiting. published={node.published}")
         node.destroy_node()
         rclpy.shutdown()
+
+def main():
+    parser = argparse.ArgumentParser(description="ROS 2 multiprocess generator -> publisher")
+    parser.add_argument('--execution_time', type=float, default=20.0, help='Total run time (s)')
+    parser.add_argument('--message_type', type=str, required=True, help='ROS 2 message type (e.g., Image, PointCloud2)')
+    parser.add_argument('--message_size', type=int, required=True, choices=[1, 2, 3], help='Message size tier')
+    parser.add_argument('--topic', type=str, default=None, help='Topic name (default: <message_type_lower>_topic)')
+    parser.add_argument('--gen_rate', type=float, default=10.0, help='Generation rate (Hz)')
+    parser.add_argument('--pub_timer', type=float, default=0.01, help='Publisher timer period (s)')
+    parser.add_argument('--queue_size', type=int, default=64, help='Bounded queue size between processes')
+    parser.add_argument('--sensor_qos', action='store_true', help='Use qos_profile_sensor_data for publisher')
+    args = parser.parse_args()
+
+    topic = args.topic if args.topic else f"{args.message_type.lower()}_topic"
+
+    try:
+        mp.set_start_method('spawn', force=True)
+    except RuntimeError:
+        pass
+
+    q: mp.Queue = mp.Queue(maxsize=args.queue_size)
+    stop_evt = mp.Event()
+
+    prod = mp.Process(
+        target=producer_loop,
+        args=(q, stop_evt, args.message_type, args.message_size, args.gen_rate),
+        name="producer",
+        daemon=True,
+    )
+    pub = mp.Process(
+        target=publisher_loop,
+        args=(q, stop_evt, args.message_type, topic, args.pub_timer, args.sensor_qos),
+        name="publisher",
+        daemon=True,
+    )
+
+    prod.start()
+    pub.start()
+
+    pid = pub.pid
+    with open("/tmp/publisher.pid", "w") as f:
+        f.write(str(pid))
+
+    try:
+        time.sleep(args.execution_time)
+    except KeyboardInterrupt:
+        pass
+    finally:
+        stop_evt.set()
+        prod.join(timeout=5)
+        pub.join(timeout=5)
 
 if __name__ == '__main__':
     main()

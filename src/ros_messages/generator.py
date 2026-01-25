@@ -285,14 +285,11 @@ def create_msg(msg_type, msg_size):
     return msg
 
 def generator_loop(msg_type_str, msg_size, interval):
-    # Create shared memory
     shm = shared_memory.SharedMemory(name=SHM_NAME, create=True, size=4 + MAX_MSG_SIZE)
     
     try:
         while True:
-            # Create ROS message
             msg = create_msg(msg_type_str, msg_size)
-            
             # Serialize ROS message to bytes
             raw = serialize_message(msg)
             size = len(raw)
