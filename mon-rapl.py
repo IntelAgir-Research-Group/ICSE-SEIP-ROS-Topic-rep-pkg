@@ -17,8 +17,8 @@ args = parser.parse_args()
 def execute_python_file():
    try:
       if args.command == 'server':
-         print('Here')
-         command='python3 src/ros_messages/mp_pubsub.py --execution_time '+args.timeout+' --gen_rate '+args.frequency+' --message_type '+args.type+' --message_size '+args.size
+         gen_rate = 1 / float(args.frequency)
+         command='python3 src/ros_messages/mp_pubsub.py --execution_time '+args.timeout+' --gen_rate '+str(gen_rate)+' --pub_timer '+args.frequency+' --message_type '+args.type+' --message_size '+args.size
          print(f'Command: {command}')
       else:
          # client
