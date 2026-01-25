@@ -3,6 +3,7 @@ import argparse
 import importlib
 import multiprocessing as mp
 import os
+from queue import Empty
 import signal
 import sys
 import time
@@ -355,27 +356,52 @@ def publisher_loop(q: mp.Queue, stop_evt: mp.Event, msg_type_str: str, topic: st
             self.dropped = 0
             self.timer = self.create_timer(pub_timer_period, self.on_timer)
 
+        
         def on_timer(self):
-            # Drain queue quickly to reduce latency
             drained = 0
-            while not q.empty():
+            MAX_PER_TICK = 10000  # safeguard to keep latency predictable
+
+            while drained < MAX_PER_TICK:
                 try:
                     payload: Payload = q.get_nowait()
-                except Exception:
+                except Empty:
+                    break  # nothing to consume right now
+                except Exception as e:
+                    self.get_logger().error(f"Queue get_nowait failed: {e!r}")
                     break
+
                 try:
                     msg = deserialize_message(payload.data, msg_class)
-                    # Restamp with ROS time if header exists
                     if hasattr(msg, "header"):
                         msg.header.stamp = self.get_clock().now().to_msg()
                     self.pub.publish(msg)
                     self.published += 1
                     drained += 1
                 except Exception as e:
-                    self.get_logger().error(f"Deser/Publish failed: {e}")
-            if drained == 0:
-                # (Optional) log rarely if idle
-                pass
+                    self.get_logger().error(f"Deser/Publish failed: {e!r}")
+                    # continue draining next item
+
+        # def on_timer(self):
+        #     # Drain queue quickly to reduce latency
+        #     drained = 0
+        #     while not q.empty():
+        #         try:
+        #             payload: Payload = q.get_nowait()
+        #         except Exception:
+        #             break
+        #         try:
+        #             msg = deserialize_message(payload.data, msg_class)
+        #             # Restamp with ROS time if header exists
+        #             if hasattr(msg, "header"):
+        #                 msg.header.stamp = self.get_clock().now().to_msg()
+        #             self.pub.publish(msg)
+        #             self.published += 1
+        #             drained += 1
+        #         except Exception as e:
+        #             self.get_logger().error(f"Deser/Publish failed: {e}")
+        #     if drained == 0:
+        #         # (Optional) log rarely if idle
+        #         pass
 
     def shutdown_handler(signum, frame):
         stop_evt.set()
