@@ -14,7 +14,7 @@ def execute_python_file():
    try:
       if args.command == 'server':
          gen_rate = 1 / float(args.frequency)
-         command='python3 src/ros_messages/mp_pubsub.py --execution_time '+args.timeout+' --gen_rate '+str(gen_rate)+' --pub_timer '+args.frequency+' --message_type '+args.type+' --message_size '+args.size
+         command='python3 src/ros_messages/mp_pubsub.py --gen_rate '+str(gen_rate)+' --pub_timer '+args.frequency+' --message_type '+args.type+' --message_size '+args.size
       else:
          # client
         command='python3 src/ros_messages/subscriber.py --message_type '+args.type

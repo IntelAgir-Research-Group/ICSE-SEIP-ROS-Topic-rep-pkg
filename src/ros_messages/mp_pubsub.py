@@ -399,7 +399,7 @@ def publisher_loop(q: mp.Queue, stop_evt: mp.Event, msg_type_str: str, topic: st
 
 def main():
     parser = argparse.ArgumentParser(description="ROS 2 multiprocess producer -> publisher")
-    parser.add_argument('--execution_time', type=float, default=60.0, help='Total run time (s)')
+    parser.add_argument('--execution_time', type=float, default=120.0, help='Total run time (s)')
     parser.add_argument('--message_type', type=str, required=True, help='ROS 2 message type (e.g., Image, PointCloud2)')
     parser.add_argument('--message_size', type=int, required=True, choices=[1, 2, 3], help='Message size tier')
     parser.add_argument('--topic', type=str, default=None, help='Topic name (default: <message_type_lower>_topic)')
