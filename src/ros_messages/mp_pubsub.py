@@ -390,14 +390,14 @@ def publisher_loop(q: mp.Queue, stop_evt: mp.Event, msg_type_str: str, topic: st
         rclpy.shutdown()
 
 def main():
-    parser = argparse.ArgumentParser(description="ROS 2 multiprocess generator -> publisher")
-    parser.add_argument('--execution_time', type=float, default=20.0, help='Total run time (s)')
+    parser = argparse.ArgumentParser(description="ROS 2 multiprocess producer -> publisher")
+    parser.add_argument('--execution_time', type=float, default=60.0, help='Total run time (s)')
     parser.add_argument('--message_type', type=str, required=True, help='ROS 2 message type (e.g., Image, PointCloud2)')
     parser.add_argument('--message_size', type=int, required=True, choices=[1, 2, 3], help='Message size tier')
     parser.add_argument('--topic', type=str, default=None, help='Topic name (default: <message_type_lower>_topic)')
     parser.add_argument('--gen_rate', type=float, default=10.0, help='Generation rate (Hz)')
     parser.add_argument('--pub_timer', type=float, default=0.01, help='Publisher timer period (s)')
-    parser.add_argument('--queue_size', type=int, default=64, help='Bounded queue size between processes')
+    parser.add_argument('--queue_size', type=int, default=256, help='Bounded queue size between processes')
     parser.add_argument('--sensor_qos', action='store_true', help='Use qos_profile_sensor_data for publisher')
     args = parser.parse_args()
 
