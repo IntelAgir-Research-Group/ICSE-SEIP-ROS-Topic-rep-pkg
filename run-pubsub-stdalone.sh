@@ -74,7 +74,6 @@ if [[ -f "$file" ]]; then
       wait "$srv_mon" "$cli_mon"
     } &
 
-
     spent_time=0
 
     while [ "$(echo "$spent_time < $etime" | bc -l)" -eq 1 ]; do
@@ -93,6 +92,8 @@ if [[ -f "$file" ]]; then
     if [ "$(echo "$spent_time > $etime" | bc)" -eq 1 ]; then
         echo "Timeout!"
     fi
+
+    sleep 5
     
     cp -f energy-* $d_folder
     rm -Rf energy-*
