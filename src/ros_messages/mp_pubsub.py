@@ -29,7 +29,9 @@ def get_message_type(msg_type_str: str):
         'PoseWithCovarianceStamped': 'geometry_msgs.msg',
         'Int32': 'std_msgs.msg',
         'Twist': 'geometry_msgs.msg',
-        'JointState': 'sensor_msgs.msg',
+        'TwistStamped': 'geometry_msgs.msg',
+        'Vector3Stamped': 'geometry_msgs.msg',
+        'JointState': 'sensor_msgs.msg'
     }
     msg_module_str = msg_types.get(msg_type_str)
     if not msg_module_str:
@@ -214,6 +216,16 @@ def create_joint_state(msg, msg_size):
     msg.effort = np.random.uniform(0.0, 1.0, num_joints).tolist()
     return msg
 
+def create_vector3_stamped(msg, msg_size, data_size):
+    msg.header.frame_id = "vector_frame"
+    create_vector3(msg.vector, msg_size, data_size)
+    return msg
+
+def create_twist_stamped(msg, msg_size):
+    msg.header.frame_id = "twist_frame"
+    create_twist(msg.twist, msg_size)
+    return msg
+
 def create_msg(msg_type: str, msg_size: int):
     if msg_size not in (1, 2, 3):
         raise ValueError("message_size must be 1, 2, or 3")
@@ -258,6 +270,12 @@ def create_msg(msg_type: str, msg_size: int):
             msg = create_twist(msg, msg_size)
         case 'JointState':
             msg = create_joint_state(msg, msg_size)
+        case 'Vector3Stamped':
+            msg = create_vector3(msg.vector, msg_size, data_size)
+            msg.header.frame_id = "vector_frame"
+        case 'TwistStamped':
+            msg = create_twist(msg.twist, msg_size)
+            msg.header.frame_id = "twist_frame"
         case _:
             return None
     return msg
