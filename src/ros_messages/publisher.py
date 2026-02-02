@@ -229,6 +229,29 @@ def create_joint_state(msg, msg_size):
     msg.effort = np.random.uniform(0.0, 1.0, num_joints).tolist()
     return msg
 
+def create_vector3_stamped(msg, msg_size, data_size):
+    if msg_size >= 1:
+        msg.vector.x = np.random.uniform(0.0, float(data_size))
+    if msg_size >= 2:
+        msg.vector.y = np.random.uniform(0.0, float(data_size))
+    if msg_size >= 3:
+        msg.vector.z = np.random.uniform(0.0, float(data_size))
+    msg.header.frame_id = "map"
+    return msg
+
+def create_twist_stamped(msg, msg_size):
+    if msg_size >= 1:
+        msg.twist.linear.x = np.random.uniform(0.0, 1.0)
+        msg.twist.angular.x = np.random.uniform(0.0, 0.1)
+    if msg_size >= 2:
+        msg.twist.linear.y = np.random.uniform(0.0, 2.0)
+        msg.twist.angular.y = np.random.uniform(0.0, 0.2)
+    if msg_size >= 3:
+        msg.twist.linear.z = np.random.uniform(0.0, 3.0)
+        msg.twist.angular.z = np.random.uniform(0.0, 0.3)
+    msg.header.frame_id = "map"
+    return msg
+
 def create_msg(msg_type: str, msg_size: int):
     # Simple validation to avoid zero division in scalar messages
     if msg_size not in (1, 2, 3):
@@ -276,6 +299,10 @@ def create_msg(msg_type: str, msg_size: int):
             msg = create_twist(msg, msg_size)
         case 'JointState':
             msg = create_joint_state(msg, msg_size)
+        case 'Vector3Stamped':
+            msg = create_vector3_stamped(msg, msg_size, data_size)
+        case 'TwistStamped':
+            msg = create_twist_stamped(msg, msg_size)
         case _:
             return None
     return msg
